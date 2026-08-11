@@ -86,6 +86,8 @@ When the governing standard is unclear, state the assumption:
 
 ## Relationship to `accessibility/core`
 
+For MarinOS web apps and documentation, this skill supplies detailed accessibility policy and review guidance. The `marinappsbrand` repository supplies the shared implementation and technical acceptance checklist. Do not duplicate its current shell markup or CSS here.
+
 This skill does not replace the core accessibility skill.
 
 Use `accessibility/core` for:
@@ -1360,6 +1362,12 @@ Recommended automated checks may include:
 - Playwright or Cypress accessibility scans;
 - color contrast tooling;
 - browser dev tools accessibility tree inspection.
+
+### WAVE browser-extension testing
+
+For local MarinOS pages, serve the repository over HTTP (for example, `python3 -m http.server 8000`) and test the `http://localhost:8000/` URL. A page opened directly with `file://` can gray out when the browser has not granted WAVE access to local files; if direct-file testing is required, enable local-page access in the extension settings.
+
+Treat WAVE findings as automated review input, not a conformance result. Do not say that a page “passes WAVE” or is accessible solely because WAVE reports no errors. Complete keyboard, zoom/reflow, contrast, semantics, and appropriate assistive-technology checks separately.
 
 Automated tools are useful for detecting many common issues, including:
 
