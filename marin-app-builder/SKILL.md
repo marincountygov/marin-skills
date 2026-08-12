@@ -10,20 +10,20 @@ description: Use this skill when asked to build, scaffold, or generate a new Cou
 
 Build small, focused MarinOS micro-apps using Marin's existing standards and implementation, not invented-on-the-spot patterns.
 
-This skill is the synthesis point, not a third source of truth:
+This skill is the synthesis point, not a fourth source of truth:
 
-> `marin-digital-standards` (policy — what's required) → `marin-ui` (implementation — how it's built) → **this skill** (how an AI agent uses both together) → the Marin product.
+> `marin-digital-standards` (standards define) → `marin-ui` (UI implements) → `marin-app-template` (template assembles) → **this skill** (how an AI agent uses all three together) → the Marin product.
 
-Don't restate either repo's content here beyond what's needed to sequence a build — consult them directly, and update this skill only if the sequencing itself changes.
+Don't restate any of those repos' content here beyond what's needed to sequence a build — consult them directly, and update this skill only if the sequencing itself changes. In particular, don't reconstruct the project structure or UI system from these docs when a working instance of both already exists in `marin-app-template` — start there instead.
 
 ## Before building, consult
 
-- [`marin-ui/docs/architecture.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/architecture.md) — frontend stack, file structure, JavaScript/storage rules.
-- [`marin-ui/docs/foundations.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/foundations.md) and [`marin-digital-standards/brand`](https://github.com/marincountygov/marin-digital-standards/tree/main/brand) — color and typography.
-- [`marin-ui/docs/components.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/components.md) — required shared CSS classes and the `.menu` disclosure component.
-- [`marin-ui/docs/app-shell.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/app-shell.md) — the required shell markup.
-- [`marin-ui/docs/accessibility-implementation.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/accessibility-implementation.md) and [`marin-digital-standards/accessibility`](https://github.com/marincountygov/marin-digital-standards/tree/main/accessibility) — WCAG 2.2 AA, both what's required and how Marin UI implements it.
+- [`marin-app-template`](https://github.com/marincountygov/marin-app-template) — the starting point for every build. Its `index.html`, `assets/`, and vendored `marin-ui` bundle already encode the required shell, branding, menu behavior, font loading, theme handling, and accessibility baseline. Its `docs/development.md` covers customizing it and updating the vendored bundle.
+- [`marin-ui/docs/architecture.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/architecture.md) — frontend stack, file structure, JavaScript/storage rules, for anything the template doesn't already show.
+- [`marin-ui/docs/components.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/components.md) — the shared component library to draw from before writing new markup or CSS.
+- [`marin-ui/docs/accessibility-implementation.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/accessibility-implementation.md) and [`marin-digital-standards/accessibility`](https://github.com/marincountygov/marin-digital-standards/tree/main/accessibility) — WCAG 2.2 AA, for anything beyond what the template's shell already satisfies.
 - [`marin-digital-standards/content-design`](https://github.com/marincountygov/marin-digital-standards/tree/main/content-design) — interface copy, heading case, plain language, descriptions.
+- [`marin-digital-standards/brand`](https://github.com/marincountygov/marin-digital-standards/tree/main/brand) — only if a build needs a brand decision the template's already-configured tokens and shell don't cover.
 - [`marin-digital-standards/product-design`](https://github.com/marincountygov/marin-digital-standards/tree/main/product-design) — only if the app is a resident-facing public service rather than an internal tool; the build workflow below assumes the internal-tool case by default.
 
 Do not invent a new visual pattern, component, or copy convention when an approved one already covers the requirement — that's the single most common way a generated app drifts from the rest of MarinOS.
@@ -31,20 +31,20 @@ Do not invent a new visual pattern, component, or copy convention when an approv
 ## Build workflow
 
 1. Confirm scope: a small internal tool, review app, data-cleanup utility, form workflow, or dashboard (the default case this skill covers), or a resident-facing public service (also apply `marin-digital-standards/product-design`).
-2. Use the default frontend stack and file structure from `marin-ui/docs/architecture.md`: semantic HTML, Pico.css, `shared/app-brand.css`, vanilla JavaScript, Alpine.js only if it materially simplifies repetitive DOM state, Dexie.js only if the app needs IndexedDB-backed record storage. Don't introduce React, Vue, Svelte, Angular, Next.js, Tailwind, Bootstrap, npm build steps, or frontend routing frameworks unless explicitly requested.
-3. Start from the required app shell in `marin-ui/docs/app-shell.md`: skip link, MarinOS banner (the `.menu` dropdown, not a plain link), product icon, app title, main landmark, MarinOS footer, text-only Feedback button.
-4. Derive branding from `marin-digital-standards/brand` and the token implementation in `marin-ui/docs/foundations.md`. Never recreate, distort, or alter the County logo — use the approved artwork or a placeholder.
-5. Use Jost for heading fonts from a local bundled font file with accessible fallbacks. Use sentence case throughout the interface, per `marin-digital-standards/content-design/interface-writing.md` — not a restated rule here, the same rule.
-6. Follow the user's OS light/dark preference via `prefers-color-scheme`. Never add a manual theme toggle or store a theme preference.
-7. Collapse the main menu on narrow viewports with a keyboard-operable button using `aria-expanded`/`aria-controls`, per `marin-ui/docs/components.md`.
-8. Build to WCAG 2.2 Level AA from the start, not as a cleanup pass — semantic controls, visible labels, proper heading order, full keyboard operability, visible focus, accessible form errors, sufficient contrast, non-color-only status indicators, reduced-motion support, accessible live regions for dynamic status. See `marin-ui/docs/accessibility-implementation.md` for the exact patterns.
-9. Use `localStorage` only for small preferences; `IndexedDB` via Dexie for real records or larger structured data; include JSON export/import for any meaningful local data.
+2. Start the project from `marin-app-template` (use it as the GitHub template, or copy its structure) rather than assembling `index.html`, the shell, branding, or menu behavior from scratch. Its vendored `marin-ui` bundle already provides Pico.css, `app-brand.css`, `app-shell.js`, and the local Jost font. Don't introduce React, Vue, Svelte, Angular, Next.js, Tailwind, Bootstrap, npm build steps, or frontend routing frameworks unless explicitly requested — the template deliberately has none.
+3. Replace the `APP_NAME`, `APP_DESCRIPTION`, and `APP_OWNER` placeholders in `index.html` and `README.md` with the real product name, one-sentence plain-language description, and owner.
+4. Add only application-specific code: replace the starter `#start`/`#help` sections in `index.html` with the real workflow, add app-specific state and behavior to `assets/app.js`, and add app-specific styling to `assets/app.css` only after confirming an existing `marin-ui` component or token doesn't already cover it.
+5. Use `localStorage` only for small preferences; `IndexedDB` via Dexie for real records or larger structured data; include JSON export/import for any meaningful local data.
+6. Build the added content to WCAG 2.2 Level AA — the template's shell already meets this baseline, so focus here on whatever's new: form fields, dynamic content, custom controls. See `marin-ui/docs/accessibility-implementation.md` for the exact patterns.
+
+The skill should not independently recreate the project structure or UI system — if a build needs something the template and `marin-ui` don't provide, that's a signal to extend those repos, not to invent a one-off pattern inside a single product.
 
 ## Review checklist before accepting generated code
 
 Whether this skill or another agent produced the code, verify before accepting it:
 
 ```text
+The project was started from marin-app-template rather than assembled from scratch — check for TEMPLATE_VERSION and the vendored marin-ui bundle (BRAND_VERSION, shared/, vendor/).
 No unnecessary framework was introduced.
 Pico.css is used as the base layer; app-brand.css is used for County-specific styling.
 The app has a skip link and one main landmark.
@@ -64,6 +64,7 @@ Interface headings and labels use sentence case rather than forced all caps.
 Directory card titles are the links; duplicate "Open" links are absent.
 WAVE testing is run from an HTTP URL, or local-file access is enabled for the extension.
 Local data has export/import if meaningful.
+No APP_NAME, APP_DESCRIPTION, or APP_OWNER placeholders remain.
 ```
 
 For a resident-facing service specifically, also check it against `marin-digital-standards/product-design/principles.md`'s quality checklist (eligibility/requirements stated up front, one primary action per page, plain confirmation and next steps).
@@ -71,3 +72,5 @@ For a resident-facing service specifically, also check it against `marin-digital
 ## Boundaries
 
 This skill builds and reviews the *whole* app shell — it doesn't replace a focused review. For a deep pass on one dimension, use the specific skill instead: `accessibility-review` for WCAG conformance beyond this checklist, `design-review` for County visual-identity compliance, `plain-language-review` or `inclusive-language-review` for content, `digital-service-design` for a resident-facing service's task flow.
+
+This skill doesn't own project scaffolding or the UI system — those belong to `marin-app-template` and `marin-ui` respectively. If a build repeatedly needs something neither provides, that's a signal to extend the template or `marin-ui`, not to work around the gap inside this skill or a single product.
