@@ -27,7 +27,7 @@ Example for a document at `/marindocs/sop/2026-comprehensive-road-maintenance-op
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
   <a href="../index.html">MarinDocs</a> <span aria-hidden="true">/</span>
   <a href="index.html">SOPs</a> <span aria-hidden="true">/</span>
-  2026 Comprehensive Road Maintenance Operation Procedures
+  2026 comprehensive road maintenance operation procedures
 </nav>
 ```
 
@@ -45,6 +45,16 @@ The MarinOS banner and the site favicon both use the same shared MarinOS icon (t
 
 - In the banner, place the icon immediately before the word "MarinOS" and color it with `currentColor` so it always matches the banner text color.
 - Use the same icon as the favicon via the inline SVG data URI documented in `marinappsbrand/SPEC.md`. Do not add a separate `.ico` or PNG favicon file — this keeps the identity mark self-contained and versioned with the rest of the shared bundle.
+
+## Structured data (JSON-LD)
+
+Every MarinDocs document page embeds a `<script type="application/ld+json">` block describing the document (schema.org `HowTo`/`DigitalDocument`, extended with the `marin:` vocabulary for fields schema.org doesn't cover — responsible roles, decision branches, workflow metadata). This is not optional metadata bolted on for SEO: it is load-bearing content that the page's own JavaScript reads at runtime —
+
+- the **Download JSON** action in `doc-actions` serializes this exact block;
+- the **Flow view**, where present, is rendered entirely from this block (section/step names, ordering, and branching), not from separate data;
+- any future machine consumer (search, another MarinOS app, a data export) should be able to read one canonical structured block instead of scraping the rendered HTML.
+
+Keep the JSON-LD in sync with the visible page: a heading, step name, or section title that changes in the HTML must change in the JSON-LD `name` field too, or the Flow view and the Download JSON output will drift from what the reader sees in Text view. See `marindocs/sop/*.html` for the current reference implementation and `marindocs/workflow-view-plan.md` for the schema's `marin:` extensions.
 
 ## Boundaries
 
