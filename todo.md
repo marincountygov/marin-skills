@@ -31,6 +31,8 @@ Purpose: Improve resident task completion for services such as applying, paying,
 
 ## 3. Add `information-architecture/`
 
+> Folder flattened from `information-architecture-skill/information-architecture/` to match this section's intended name. Core principles and decision rules also moved to `marin-digital-standards/product-design/navigation.md`; subskill-level workflow content stays here, not yet refactored.
+
 - [X] Create `information-architecture/SKILL.md`
 - [X] Add `subskills/navigation-labels.md`
 - [X] Add `subskills/page-placement.md`

@@ -1,5 +1,7 @@
 # Information Architecture Skill
 
+> **Some canonical content has moved.** This skill's core principles and decision rules (the four-question model, label/placement/cross-linking/snippet/duplication/taxonomy rules) are now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md). This folder was also flattened from `information-architecture-skill/information-architecture/`. The subskill-level workflow detail below hasn't had its own migration/refactor pass yet — this skill remains fully active as-is.
+
 ## Purpose
 
 Improve findability, navigation, page placement, internal linking, duplication control, and content taxonomy.
