@@ -140,6 +140,8 @@ Purpose: Provide a cross-skill publication-readiness review covering brand, acce
 
 ## Related accessibility expansion
 
+> Historical record — as of the marin-digital-standards migration, these medium-specific skills were consolidated into a single `accessibility-review/` skill with `subskills/` per medium, and the underlying requirements moved to `marin-digital-standards/accessibility`. Keeping this section for history; the `accessibility/` paths below no longer reflect the current structure.
+
 The 11 recommendations above are top-level additions. Separately, expand the existing `accessibility/` category with missing output-specific areas:
 
 - [X] Add `accessibility/pdf/`
