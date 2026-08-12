@@ -98,7 +98,7 @@ MarinOS web standards:
 
 - Treat the current `marinappsbrand` release as the implementation source of truth.
 - Use sentence case for interface copy: buttons, form labels, and navigation-item labels. Do not use stylized all-caps text (`text-transform: uppercase`, or typing labels/headings in all capitals) unless a request specifically calls for it — all-caps is not a default emphasis or wayfinding device in this system.
-- Use AP-style sentence case for every heading — page titles (`h1`), section and sub-section headings (`h2`, `h3`, ...), and card/document titles (SOP titles, product names, topic names) alike: capitalize only the first word, proper nouns, and acronyms/official names; don't capitalize ordinary words just because they're in a heading; no ending period. See `marinappsbrand/SPEC.md` for the full rule and examples. Keep this in sync across views of the same content — if a document's section/step titles also drive another rendering (e.g., a Flow view built from the same JSON-LD), update both together.
+- Heading case is now canonical in [marin-digital-standards/content-design/interface-writing.md](https://github.com/marincountygov/marin-digital-standards/blob/main/content-design/interface-writing.md) (AP-style sentence case for every heading level) — that's a content-design rule, not a visual-identity one, so it moved out of this skill rather than being restated here.
 - Let light and dark presentation follow the operating-system preference. Do not add a manual theme toggle.
 - Use the approved product icon beside the product title. Do not add `app-official`, `app-logotype`, `app-kicker`, `eyebrow`, or `directory-hero` treatments.
 - Group the app title and subtitle with the standard Marin gold left border.
@@ -106,8 +106,7 @@ MarinOS web standards:
 - A card holds a heading and one description only — no identifier, count, section total, or "Updated" line stacked underneath — unless the request specifically asks for that metadata to be shown on the card. Metadata like that belongs on the destination page, not repeated on every card that links to it.
 - Include the standard text-only Feedback control on every full page; do not place an icon in it.
 - Keep the standard footer to the text `MarinOS`, linked to `https://marincountygov.github.io/marinos/`.
-- Write each page's description (the `<meta name="description">` tag and any on-page summary/lede serving the same role) and every card/list-item description as one plain-language sentence at roughly a 9th-grade reading level: short sentence, common words, no jargon or acronyms the audience wouldn't already know.
-- Give a landing/index-style page (product header with an `app-subtitle`, or a collection hero with an `h2`) exactly one description line. Do not stack a second lede paragraph under the hero heading that just restates the subtitle already shown above it.
+- Page/card description rules (one plain-language sentence, one description line per landing page) are also now canonical in `marin-digital-standards/content-design/interface-writing.md`.
 - Bare `<nav>` elements do not use Pico's default `justify-content: space-between` — `marinappsbrand` resets it sitewide (`nav { justify-content: flex-start; }`) so nav content groups together by default; a component that needs its items spread apart sets `justify-content` explicitly for that one case.
 - Grouped document actions (Share, Download, and similar multi-option controls) use the shared `.menu` disclosure-button component rather than a row of separate always-visible buttons once there is more than one option per action. See `marinappsbrand/SPEC.md` for the component markup.
 - For header contents, breadcrumb structure, and favicon/banner-icon usage, see the separate `web-design-standards` skill.
