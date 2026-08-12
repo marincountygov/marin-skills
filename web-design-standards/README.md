@@ -8,8 +8,8 @@ This package provides page-chrome and navigation-structure standards for MarinOS
 
 ## Purpose
 
-Keep page chrome (headers, breadcrumbs, identity marks) consistent and predictable across MarinOS apps and documentation, separate from visual identity (`brand-standards`) and resident task-flow design (`digital-service-design`).
+Keep page chrome (headers, breadcrumbs, identity marks) consistent and predictable across MarinOS apps and documentation, separate from visual identity (`design-review`) and resident task-flow design (`digital-service-design`).
 
 ## Suggested use
 
-Install this folder as a skill named `web-design-standards`. Use it alongside `brand-standards` for County visual identity and `marinappsbrand` for the implementation source of truth.
+Install this folder as a skill named `web-design-standards`. Use it alongside `design-review` for County visual identity and `marin-ui` for the implementation source of truth.
