@@ -41,10 +41,10 @@ Rules:
 
 ## MarinOS identity mark
 
-The MarinOS banner and the site favicon both use the same shared MarinOS icon (the four-square mark defined in `marinappsbrand`), not a separate logo file or unrelated glyph.
+The MarinOS banner and the site favicon both use the same shared MarinOS icon (the four-square mark defined in `marin-ui`), not a separate logo file or unrelated glyph.
 
 - In the banner, place the icon immediately before the word "MarinOS" and color it with `currentColor` so it always matches the banner text color.
-- Use the same icon as the favicon via the inline SVG data URI documented in `marinappsbrand/SPEC.md`. Do not add a separate `.ico` or PNG favicon file — this keeps the identity mark self-contained and versioned with the rest of the shared bundle.
+- Use the same icon as the favicon via the inline SVG data URI documented in [`marin-ui/docs/app-shell.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/app-shell.md). Do not add a separate `.ico` or PNG favicon file — this keeps the identity mark self-contained and versioned with the rest of the shared bundle.
 
 ## Structured data (JSON-LD)
 
@@ -62,7 +62,7 @@ Keep the JSON-LD in sync with the visible page: a heading, step name, or section
 - On directory cards, make the heading the destination link; do not add a duplicate "Open" link.
 - A card holds a heading and one description only — no identifier, count, section total, or "Updated" line stacked underneath — unless the request specifically asks for that metadata to be shown on the card. Metadata like that belongs on the destination page, not repeated on every card that links to it.
 - Bare `<nav>` elements do not use Pico's default `justify-content: space-between` — `marin-ui` resets it sitewide (`nav { justify-content: flex-start; }`) so nav content groups together by default; a component that needs its items spread apart sets `justify-content` explicitly for that one case.
-- Grouped document actions (Share, Download, and similar multi-option controls) use the shared `.menu` disclosure-button component rather than a row of separate always-visible buttons once there's more than one option per action. See `marin-ui/SPEC.md` for the component markup.
+- Grouped document actions (Share, Download, and similar multi-option controls) use the shared `.menu` disclosure-button component rather than a row of separate always-visible buttons once there's more than one option per action. See [`marin-ui/docs/components.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/components.md) for the component markup.
 
 ## Boundaries
 
