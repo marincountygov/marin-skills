@@ -1,5 +1,7 @@
 # Status, Confirmation, and Next Steps Subskill
 
+> **Canonical requirements have moved** to [marin-digital-standards/product-design/errors-and-recovery.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/errors-and-recovery.md) (confirmation-message structure and status types). This file remains the active review workflow — questions, output tables, quality criteria.
+
 ## Purpose
 
 Design confirmation messages, receipts, status updates, and next-step instructions that tell residents what happened, what happens next, when to expect action, and how to get help.

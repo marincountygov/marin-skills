@@ -1,5 +1,7 @@
 # Eligibility and Requirements Subskill
 
+> **Canonical requirements have moved** to [marin-digital-standards/product-design/service-design.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/service-design.md) (eligibility/requirements definitions and core rules). This file remains the active review workflow — questions, output tables, quality criteria.
+
 ## Purpose
 
 Clarify who can use a service, who cannot use it, what is required before starting, and what conditions affect the result.

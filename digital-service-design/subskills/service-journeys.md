@@ -1,5 +1,7 @@
 # Service Journeys Subskill
 
+> **Canonical requirements have moved** to [marin-digital-standards/product-design/service-design.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/service-design.md) (the journey-stages model). This file remains the active review workflow — questions, output tables, quality criteria.
+
 ## Purpose
 
 Map the full resident experience of a service from initial need through completion, follow-up, and possible recovery. Use this subskill to identify gaps between what residents need and how the County currently presents or delivers the service.

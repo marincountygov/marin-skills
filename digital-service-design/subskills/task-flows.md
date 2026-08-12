@@ -1,5 +1,7 @@
 # Task Flows Subskill
 
+> **Canonical requirements have moved** to [marin-digital-standards/product-design/interaction-design.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/interaction-design.md) (core rules and flow types). This file remains the active review workflow — questions, output tables, quality criteria.
+
 ## Purpose
 
 Convert a service into a clear sequence of resident actions. Use this subskill to remove ambiguity, reduce unnecessary steps, and make task completion easier.

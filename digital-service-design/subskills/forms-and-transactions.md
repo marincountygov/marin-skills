@@ -1,5 +1,7 @@
 # Forms and Transactions Subskill
 
+> **Canonical requirements have moved** to [marin-digital-standards/product-design/forms.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/forms.md) (core rules, transaction checklist, payment/upload guidance). This file remains the active review workflow — questions, output tables, quality criteria.
+
 ## Purpose
 
 Improve forms, applications, payments, uploads, signatures, registrations, reports, and other resident transactions so they are easier to start, complete, submit, and recover from.

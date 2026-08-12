@@ -1,5 +1,7 @@
 # Failure States Subskill
 
+> **Canonical requirements have moved** to [marin-digital-standards/product-design/errors-and-recovery.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/errors-and-recovery.md) (failure-state definitions and core rules). This file remains the active review workflow — questions, output tables, quality criteria.
+
 ## Purpose
 
 Design clear recovery paths for service moments where residents cannot proceed, make an error, miss a requirement, receive a denial, encounter a system failure, or need human help.

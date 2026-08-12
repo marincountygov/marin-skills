@@ -1,5 +1,7 @@
 # Digital Service Design Skill
 
+> **Canonical requirements have moved.** The five-question service model, operating principles, default page structure, journey stages, task-flow rules, and failure-state/status-message patterns are now canonical in [marin-digital-standards/product-design](https://github.com/marincountygov/marin-digital-standards/tree/main/product-design). This skill is the workflow that applies them to a specific service — the required review dimensions, subskill routing, and output formats below.
+
 ## Purpose
 
 Improve resident task completion for County services such as applying, paying, reporting, requesting, registering, appealing, contacting, or checking eligibility.
@@ -18,27 +20,7 @@ Use this skill when working on content or workflows for a resident-facing servic
 - Appeal, dispute, respond to, renew, cancel, reschedule, update, or check status.
 - Determine eligibility, required documents, deadlines, fees, processing times, or next steps.
 
-## Primary outcome
-
-The service should help the resident answer five questions quickly:
-
-1. Is this the right service for my situation?
-2. Am I eligible, and what do I need before I start?
-3. What will happen during the task?
-4. What happens after I submit or contact the County?
-5. What can I do if I cannot complete the task or something goes wrong?
-
-## Operating principles
-
-- Start with the resident’s task, not the department’s internal process.
-- Name the service using the resident’s verb and object, such as “Apply for a building permit” or “Report illegal dumping.”
-- State eligibility, requirements, cost, deadlines, and processing time before asking residents to start.
-- Separate required steps from optional or situational steps.
-- Use one primary action per page, screen, or section whenever possible.
-- Preserve continuity across web pages, forms, PDFs, emails, receipts, notices, and staff handoffs.
-- Design for interruption, uncertainty, missing documents, payment failure, ineligibility, rejection, and appeal paths.
-- Confirm completion in plain terms and provide next steps, expected timing, and contact options.
-- Do not expose internal jargon, organization charts, system names, or administrative sequence unless residents need them to complete the task.
+See `marin-digital-standards/product-design/principles.md` for the five-question model and operating principles this skill applies.
 
 ## Required service-design review
 
@@ -77,32 +59,7 @@ Use the format that best matches the user’s request:
 - Failure-state recovery table
 - Service-quality review checklist
 
-## Default service page structure
-
-When drafting or reviewing a service page, prefer this structure unless the user provides a different template:
-
-1. Page title using a resident action verb.
-2. One-sentence summary of who the service is for and what it does.
-3. Before you start: eligibility, requirements, documents, fees, deadlines, and estimated time.
-4. Start action or contact path.
-5. What happens next.
-6. How to check status or get help.
-7. Related services or alternatives.
-
-## Quality checklist
-
-A resident-facing service is ready when:
-
-- The title matches the resident’s task.
-- The page explains who should and should not use the service.
-- The resident can tell what they need before starting.
-- The primary action is visible and unambiguous.
-- Steps are ordered in the way the resident experiences them.
-- Fees, deadlines, processing times, and consequences are stated clearly.
-- Confirmation and next steps are specific.
-- Help, alternative channels, and failure recovery are available.
-- The service avoids unnecessary internal terminology.
-- Each page or message has one clear purpose.
+See `marin-digital-standards/product-design/principles.md` for the default service page structure and quality checklist this skill applies when drafting or reviewing a service page.
 
 ## Boundaries
 
