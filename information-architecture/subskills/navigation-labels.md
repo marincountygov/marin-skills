@@ -1,5 +1,7 @@
 # Navigation Labels Subskill
 
+> **Canonical requirements have moved.** The core label rule (short, concrete, user language, no jargon) is now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md) (decision rules section). This file remains the active detailed reference — patterns, examples, and review workflow.
+
 ## Purpose
 
 Create, assess, and improve navigation labels, section labels, breadcrumbs, calls to action, and link text so users can predict what they will find before they click.

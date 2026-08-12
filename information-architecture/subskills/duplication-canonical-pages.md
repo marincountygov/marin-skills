@@ -1,5 +1,7 @@
 # Duplication and Canonical Pages Subskill
 
+> **Canonical requirements have moved.** The core rule (one canonical page per user question, never competing duplicates) is now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md). The recommended-action labels below overlap with `content-audit`'s recommendation labels (Keep/Merge/Redirect/Archive/etc.) — use this subskill for the IA/findability angle (which page is canonical) and `content-audit` for the broader content-quality angle (should this content exist at all).
+
 ## Purpose
 
 Identify overlapping content, select canonical pages, consolidate duplicates, and define redirects or retirement actions so users and search systems have one authoritative source for each need.

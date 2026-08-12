@@ -1,5 +1,7 @@
 # Cross-Linking Subskill
 
+> **Canonical requirements have moved.** The core cross-linking rule (links reflect meaningful user journeys, not shared ownership) is now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md). This file remains the active detailed reference and review workflow.
+
 ## Purpose
 
 Plan internal links that help users move between related pages, complete tasks, recover from wrong turns, and understand relationships between services, topics, requirements, and next steps.

@@ -1,5 +1,7 @@
 # Page Placement Subskill
 
+> **Canonical requirements have moved.** The core placement rule (content lives where its audience expects, not where the org chart puts it) is now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md). Content-type definitions referenced below are canonical in [marin-digital-standards/content-design/content-patterns.md](https://github.com/marincountygov/marin-digital-standards/blob/main/content-design/content-patterns.md). This file remains the active detailed reference and review workflow.
+
 ## Purpose
 
 Decide where content belongs in a website structure so users can find it from navigation, search, related pages, and task pathways.

@@ -1,6 +1,6 @@
 # Information Architecture Skill
 
-> **Some canonical content has moved.** This skill's core principles and decision rules (the four-question model, label/placement/cross-linking/snippet/duplication/taxonomy rules) are now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md). This folder was also flattened from `information-architecture-skill/information-architecture/`. The subskill-level workflow detail below hasn't had its own migration/refactor pass yet — this skill remains fully active as-is.
+> **Some canonical content has moved.** This skill's core principles and decision rules (the four-question model, label/placement/cross-linking/snippet/duplication/taxonomy rules) are now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md). This folder was also flattened from `information-architecture-skill/information-architecture/`. Each subskill file now has its own pointer to the specific standard it overlaps with — the detailed patterns, examples, and review workflow stay in the subskills; this hasn't been fully consolidated into a single skill file the way `accessibility-review` was, since the six areas here are distinct enough to keep separate.
 
 ## Purpose
 

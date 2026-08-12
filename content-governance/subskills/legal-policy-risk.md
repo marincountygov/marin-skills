@@ -24,7 +24,7 @@ Escalate when content:
 - Use plain language to explain process steps, but preserve legal terms where they affect rights or obligations.
 - Separate general guidance from binding requirements.
 - Avoid promises such as `will be approved`, `guaranteed`, or `always` unless sourced and approved.
-- Use `may`, `must`, and `should` carefully. `Must` indicates a requirement.
+- Use `may`, `must`, and `should` carefully — see [marin-digital-standards/content-design/terminology.md](https://github.com/marincountygov/marin-digital-standards/blob/main/content-design/terminology.md) for the full defined meaning of each requirement word.
 
 ## Required output
 

@@ -1,5 +1,7 @@
 # Search Snippets Subskill
 
+> **Canonical requirements have moved.** The core snippet rule is now also canonical in [marin-digital-standards/product-design/navigation.md](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/navigation.md), and the one-sentence plain-language description pattern below is the same rule documented in [marin-digital-standards/content-design/interface-writing.md](https://github.com/marincountygov/marin-digital-standards/blob/main/content-design/interface-writing.md). This file remains the active detailed reference and review workflow.
+
 ## Purpose
 
 Write and evaluate search result titles, summaries, descriptions, and snippets so users can choose the right result from internal search or external search.

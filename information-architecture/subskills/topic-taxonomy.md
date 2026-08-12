@@ -1,5 +1,7 @@
 # Topic Taxonomy Subskill
 
+> **Canonical requirements have moved.** The core taxonomy-design principles (user-centered labels, avoid over-tagging, separate departments from topics) are now also canonical in [marin-digital-standards/content-design/content-patterns.md](https://github.com/marincountygov/marin-digital-standards/blob/main/content-design/content-patterns.md) — this file's "Taxonomy principles" section restates the same rule. This file remains the active detailed reference (controlled-vocabulary fields, dimensions) and review workflow.
+
 ## Purpose
 
 Create and maintain categories, tags, facets, and controlled vocabulary that improve browsing, filtering, search, reporting, governance, and content relationships.
