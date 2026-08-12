@@ -54,6 +54,8 @@ Purpose: Identify ownership, review cadence, approval needs, policy risks, priva
 
 ## 5. Add `inclusive-language/`
 
+> Historical record — consolidated into `inclusive-language-review/` with guidance moved to `marin-digital-standards/content-design/inclusive-language.md` as part of the marin-digital-standards migration. Same for `plain-language/` → `plain-language-review/`.
+
 - [X] Create `inclusive-language/SKILL.md`
 - [X] Add `subskills/disability-language.md`
 - [X] Add `subskills/race-ethnicity-national-origin.md`
