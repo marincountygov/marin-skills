@@ -5,6 +5,8 @@ Identify ownership, review cadence, approval needs, policy risks, privacy concer
 
 Use this skill when a user asks to create, review, publish, revise, retire, migrate, or govern content that may require accountable ownership, formal review, policy alignment, public-records handling, privacy review, procurement review, or emergency/public-notice coordination.
 
+See `content-design` for planning a new item's audience/purpose/type before it reaches governance, and `content-audit` for evaluating whether existing content should be kept, revised, or retired before assigning it a governance plan.
+
 ## Core outcomes
 For each content item, determine:
 
@@ -25,6 +27,8 @@ Route to relevant subskills:
 
 - `subskills/approval-routing.md` for approvals and publication authority.
 - `subskills/ownership-and-review-cycle.md` for stewardship and scheduled review.
+- `subskills/lifecycle-states.md` for tracking what stage a content item is at, from proposed through retired.
+- `subskills/editorial-calendar.md` for scheduling, channel planning, and campaign phasing.
 - `subskills/public-records-retention.md` for recordkeeping, retention, and disposition concerns.
 - `subskills/legal-policy-risk.md` for legal, regulatory, ordinance, policy, or rights-impacting content.
 - `subskills/privacy-sensitive-content.md` for personal data, protected data, minors, health, benefits, enforcement, or account information.

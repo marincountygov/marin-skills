@@ -4,6 +4,8 @@ Goal: Build a holistic collection of reusable skills for County of Marin digital
 
 ## 1. Add `content-strategy/`
 
+> Historical record — split into three task-oriented skills as part of the marin-digital-standards migration: `content-design/` (audience-intent, page-purpose, content-types, placement-and-metadata), `content-governance/` (lifecycle-states and editorial-calendar, merged into the pre-existing content-governance skill below), and `content-audit/` (the audit/scoring workflow). General principles and content-type/purpose/taxonomy definitions moved to `marin-digital-standards/content-design`.
+
 - [X] Create `content-strategy/SKILL.md`
 - [X] Add `subskills/content-types.md`
 - [X] Add `subskills/audience-intent.md`
@@ -40,6 +42,8 @@ Purpose: Improve resident task completion for services such as applying, paying,
 Purpose: Improve findability, navigation, page placement, internal linking, duplication control, and content taxonomy.
 
 ## 4. Add `content-governance/`
+
+> Folder flattened from `content-governance-skill/content-governance/` and extended with `subskills/lifecycle-states.md` and `subskills/editorial-calendar.md` (from the `content-strategy` split above) as part of the marin-digital-standards migration.
 
 - [X] Create `content-governance/SKILL.md`
 - [X] Add `subskills/approval-routing.md`
