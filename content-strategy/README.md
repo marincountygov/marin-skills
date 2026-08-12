@@ -1,5 +1,7 @@
 # Content Strategy Skill Package
 
+> **Some canonical content has moved.** The underlying content-type definitions, page-purpose types, and taxonomy design principles (from `content-types.md`, `page-purpose.md`, and part of `metadata-taxonomy.md`) are now canonical in [marin-digital-standards/content-design/content-patterns.md](https://github.com/marincountygov/marin-digital-standards/blob/main/content-design/content-patterns.md). This package's workflow content — the audit process, lifecycle states, editorial calendar, and required-metadata-fields mechanics — remains here and is not yet refactored into a task-oriented skill (`content-design`/`content-governance`/`content-audit` per the migration plan). That refactor hasn't happened yet; this package is fully active in the meantime.
+
 This package defines a reusable content strategy skill and supporting subskills.
 
 ## Files
