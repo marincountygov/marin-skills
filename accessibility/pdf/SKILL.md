@@ -1,5 +1,7 @@
 # PDF Accessibility Skill
 
+> **Canonical requirements have moved** to [marin-digital-standards/accessibility/documents.md](https://github.com/marincountygov/marin-digital-standards/blob/main/accessibility/documents.md). This file remains the active review workflow until refactored into a task-oriented accessibility-review Skill.
+
 Use this skill to review, create, or remediate County of Marin PDF documents so they are accessible, readable, and suitable for public distribution.
 
 ## Purpose

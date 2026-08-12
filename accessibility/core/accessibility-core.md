@@ -13,6 +13,8 @@ children:
 
 # Accessibility Core Skill
 
+> **Canonical requirements have moved** to [marin-digital-standards/accessibility](https://github.com/marincountygov/marin-digital-standards/tree/main/accessibility) (`standard.md` covers the POUR principles, default standard, build order, and conformance language rules below). This file remains the active review workflow — severity model, scope rules, review dimensions, finding format — until it's refactored into a task-oriented `accessibility-review` Skill.
+
 ## Purpose
 
 Use this skill whenever creating, reviewing, remediating, or advising on digital content accessibility.

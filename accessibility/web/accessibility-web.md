@@ -48,6 +48,8 @@ related_skills:
 
 # Accessibility: Web
 
+> **Canonical requirements have moved** to [marin-digital-standards/accessibility](https://github.com/marincountygov/marin-digital-standards/tree/main/accessibility) — `standard.md`, `wcag-2.2-mapping.md`, `keyboard.md`, `focus.md`, `forms.md`, `color-and-contrast.md`, and `testing.md` collectively cover the requirements below (HTML/CSS/JS requirements, forms, components, navigation, data, media, auth, mobile, motion, files). This file remains the active review workflow, code examples, checklists, and framework-specific notes until refactored into a task-oriented `accessibility-review` Skill.
+
 ## Purpose
 
 Use this skill when creating, reviewing, testing, or remediating accessibility for websites, web applications, digital services, HTML, CSS, JavaScript, component libraries, design systems, forms, dashboards, embedded widgets, and browser-based interfaces.

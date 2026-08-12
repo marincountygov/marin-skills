@@ -1,5 +1,7 @@
 # Office Document Accessibility Skill
 
+> **Canonical requirements have moved** to [marin-digital-standards/accessibility/documents.md](https://github.com/marincountygov/marin-digital-standards/blob/main/accessibility/documents.md). This file remains the active review workflow until refactored into a task-oriented accessibility-review Skill.
+
 Use this skill to create, review, or remediate accessible County of Marin Word, Excel, PowerPoint, and similar office documents.
 
 ## Purpose

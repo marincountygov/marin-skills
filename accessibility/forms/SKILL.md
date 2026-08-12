@@ -1,5 +1,7 @@
 # Form Accessibility Skill
 
+> **Canonical requirements have moved** to [marin-digital-standards/accessibility/forms.md](https://github.com/marincountygov/marin-digital-standards/blob/main/accessibility/forms.md). This file remains the active review workflow until refactored into a task-oriented accessibility-review Skill.
+
 Use this skill to create, review, or remediate accessible County of Marin forms, including online forms, fillable PDFs, and document-based forms.
 
 ## Purpose
