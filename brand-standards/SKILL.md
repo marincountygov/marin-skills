@@ -105,7 +105,7 @@ MarinOS web standards:
 - On directory cards, make the heading the destination link and do not add a duplicate “Open” link.
 - A card holds a heading and one description only — no identifier, count, section total, or "Updated" line stacked underneath — unless the request specifically asks for that metadata to be shown on the card. Metadata like that belongs on the destination page, not repeated on every card that links to it.
 - Include the standard text-only Feedback control on every full page; do not place an icon in it.
-- Keep the standard footer to the text `MarinOS`.
+- Keep the standard footer to the text `MarinOS`, linked to `https://marincountygov.github.io/marinos/`.
 - Write each page's description (the `<meta name="description">` tag and any on-page summary/lede serving the same role) and every card/list-item description as one plain-language sentence at roughly a 9th-grade reading level: short sentence, common words, no jargon or acronyms the audience wouldn't already know.
 - Give a landing/index-style page (product header with an `app-subtitle`, or a collection hero with an `h2`) exactly one description line. Do not stack a second lede paragraph under the hero heading that just restates the subtitle already shown above it.
 - Bare `<nav>` elements do not use Pico's default `justify-content: space-between` — `marinappsbrand` resets it sitewide (`nav { justify-content: flex-start; }`) so nav content groups together by default; a component that needs its items spread apart sets `justify-content` explicitly for that one case.
