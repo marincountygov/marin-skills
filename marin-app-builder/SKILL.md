@@ -59,7 +59,7 @@ Dynamic messages use role="status" or role="alert" appropriately.
 Forms expose clear validation errors; tables use proper headers and scope.
 Touch/click targets are adequately sized; reduced motion is respected.
 Logo artwork is not recreated or distorted.
-The footer contains only the text MarinOS, linked to https://marincountygov.github.io/marinos/.
+The footer contains only the text MarinOS, linked to https://marincountygov.github.io/marin-os/.
 The text-only Feedback button is present and has no icon.
 Interface headings and labels use sentence case rather than forced all caps.
 Directory card titles are the links; duplicate "Open" links are absent.
