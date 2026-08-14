@@ -32,8 +32,8 @@ Do not invent a new visual pattern, component, or copy convention when an approv
 
 1. Confirm scope: a small internal tool, review app, data-cleanup utility, form workflow, or dashboard (the default case this skill covers), or a resident-facing public service (also apply `marin-digital-standards/product-design`).
 2. Start the project from `marin-app-template` (use it as the GitHub template, or copy its structure) rather than assembling `index.html`, the shell, branding, or menu behavior from scratch. Its vendored `marin-ui` bundle already provides Pico.css, `app-brand.css`, `app-shell.js`, and the local Jost font. Don't introduce React, Vue, Svelte, Angular, Next.js, Tailwind, Bootstrap, npm build steps, or frontend routing frameworks unless explicitly requested — the template deliberately has none.
-3. Replace the `APP_NAME`, `APP_DESCRIPTION`, and `APP_OWNER` placeholders in `index.html` and `README.md` with the real product name, one-sentence plain-language description, and owner.
-4. Add only application-specific code: replace the starter `#start`/`#help` sections in `index.html` with the real workflow, add app-specific state and behavior to `assets/app.js`, and add app-specific styling to `assets/app.css` only after confirming an existing `marin-ui` component or token doesn't already cover it.
+3. Replace the `APP_NAME`, `APP_DESCRIPTION`, `APP_OWNER`, and `APP_REPO` placeholders in `index.html` and `README.md` with the real product name, one-sentence plain-language description, owner, and GitHub repo slug.
+4. Add only application-specific code: replace the starter `#start` section in `index.html` with the real workflow, add app-specific state and behavior to `assets/app.js`, and add app-specific styling to `assets/app.css` only after confirming an existing `marin-ui` component or token doesn't already cover it. Leave `#about` and `#updates` in place — every app keeps About and Updates in `#app-nav`; `#start` already covers the "Home" case as the default view's own task tab, so no separate Home link is needed unless the workflow grows a distinct landing view later (see `marin-ui/docs/components.md`, "Standard app nav"). The default view must stay immediately functional — keep info/how-to/context content out of it and in About instead.
 5. Use `localStorage` only for small preferences; `IndexedDB` via Dexie for real records or larger structured data; include JSON export/import for any meaningful local data.
 6. Build the added content to WCAG 2.2 Level AA — the template's shell already meets this baseline, so focus here on whatever's new: form fields, dynamic content, custom controls. See `marin-ui/docs/accessibility-implementation.md` for the exact patterns.
 7. If the app is meant to be part of MarinOS (not a one-off/private tool), register it: add an entry to [`marinos/catalog.json`](https://github.com/marincountygov/marinos) (id, name, type, url, description, audience, status, owner, `icon`) and the matching directory card to `marinos/index.html`, then run `node scripts/check-catalog-sync.js` in that repo. That's the entire registration step — every other MarinOS app's banner menu picks up the new entry automatically at runtime; don't hand-edit any other app's repo.
@@ -65,7 +65,8 @@ Interface headings and labels use sentence case rather than forced all caps.
 Directory card titles are the links; duplicate "Open" links are absent.
 WAVE testing is run from an HTTP URL, or local-file access is enabled for the extension.
 Local data has export/import if meaningful.
-No APP_NAME, APP_DESCRIPTION, or APP_OWNER placeholders remain.
+No APP_NAME, APP_DESCRIPTION, APP_OWNER, or APP_REPO placeholders remain.
+The app nav includes About and Updates, plus a "Home" link only if the default view has no task-specific tab of its own (see `marin-ui/docs/components.md`, "Standard app nav"); the default view is immediately functional with no info/how-to content stacked into it.
 If the app belongs in MarinOS, it's registered in marinos/catalog.json and marinos/index.html (not just built and left unlisted).
 ```
 
