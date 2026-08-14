@@ -36,6 +36,7 @@ Do not invent a new visual pattern, component, or copy convention when an approv
 4. Add only application-specific code: replace the starter `#start`/`#help` sections in `index.html` with the real workflow, add app-specific state and behavior to `assets/app.js`, and add app-specific styling to `assets/app.css` only after confirming an existing `marin-ui` component or token doesn't already cover it.
 5. Use `localStorage` only for small preferences; `IndexedDB` via Dexie for real records or larger structured data; include JSON export/import for any meaningful local data.
 6. Build the added content to WCAG 2.2 Level AA — the template's shell already meets this baseline, so focus here on whatever's new: form fields, dynamic content, custom controls. See `marin-ui/docs/accessibility-implementation.md` for the exact patterns.
+7. If the app is meant to be part of MarinOS (not a one-off/private tool), register it: add an entry to [`marinos/catalog.json`](https://github.com/marincountygov/marinos) (id, name, type, url, description, audience, status, owner, `icon`) and the matching directory card to `marinos/index.html`, then run `node scripts/check-catalog-sync.js` in that repo. That's the entire registration step — every other MarinOS app's banner menu picks up the new entry automatically at runtime; don't hand-edit any other app's repo.
 
 The skill should not independently recreate the project structure or UI system — if a build needs something the template and `marin-ui` don't provide, that's a signal to extend those repos, not to invent a one-off pattern inside a single product.
 
@@ -65,6 +66,7 @@ Directory card titles are the links; duplicate "Open" links are absent.
 WAVE testing is run from an HTTP URL, or local-file access is enabled for the extension.
 Local data has export/import if meaningful.
 No APP_NAME, APP_DESCRIPTION, or APP_OWNER placeholders remain.
+If the app belongs in MarinOS, it's registered in marinos/catalog.json and marinos/index.html (not just built and left unlisted).
 ```
 
 For a resident-facing service specifically, also check it against `marin-digital-standards/product-design/principles.md`'s quality checklist (eligibility/requirements stated up front, one primary action per page, plain confirmation and next steps).
