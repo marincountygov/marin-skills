@@ -55,6 +55,8 @@ The main menu collapses on narrow viewports with correct `aria-expanded` and `ar
 Heading order is logical; all controls have visible labels; all buttons and links have accessible names.
 The app is fully keyboard operable; focus states are visible and not obscured.
 Color contrast passes WCAG 2.2 AA; status is not conveyed by color alone.
+`--marin-gold`/`var(--marin-gold)` is not used as a foreground, border, or icon color implying meaning — it's background-only (1.91:1 against white, well under the 4.5:1 text / 3:1 non-text minimums; see `marin-digital-standards/brand/color.md`). Use `--app-accent` for an interactive/semantic highlight instead.
+No page-level header or nav is `position: sticky`/`fixed` while the page scrolls (a sidebar "on this page" list is the one accepted sticky exception — see `marin-digital-standards/product-design/responsive-design.md`).
 Dynamic messages use role="status" or role="alert" appropriately.
 Forms expose clear validation errors; tables use proper headers and scope.
 Touch/click targets are adequately sized; reduced motion is respected.
