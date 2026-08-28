@@ -63,7 +63,7 @@ Touch/click targets are adequately sized; reduced motion is respected.
 Logo artwork is not recreated or distorted.
 The footer contains only the text MarinOS, linked to https://marincountygov.github.io/marin-os/.
 The text-only Feedback button is present and has no icon.
-Interface headings and labels use sentence case rather than forced all caps.
+Headings, page `<title>` tags, breadcrumb text, and card/nav link text use AP-style sentence case (capitalize only the first word, proper nouns, and acronyms) — not Title Case and not forced all caps; see `marin-digital-standards/content-design/interface-writing.md`.
 Directory card titles are the links; duplicate "Open" links are absent.
 WAVE testing is run from an HTTP URL, or local-file access is enabled for the extension.
 Local data has export/import if meaningful.
