@@ -13,3 +13,5 @@ Keep page chrome (headers, breadcrumbs, identity marks) consistent and predictab
 ## Suggested use
 
 Install this folder as a skill named `web-design-standards`. Use it alongside `design-review` for County visual identity and `marin-ui` for the implementation source of truth.
+
+The skill also reinforces the local-first runtime asset rule for page chrome: use the shared `marin-ui` bundle for fonts and UI assets instead of adding external font or static-asset CDN references.

@@ -13,3 +13,7 @@ This skill is the synthesis point in the dependency chain: [`marin-digital-stand
 This skill replaces the "Standard AI Code Agent prompt" and "Review checklist before accepting generated code" sections that lived in `marin-ui/SPEC.md`. The original prompt was written as a block of text to hand to a separate AI coding agent; this version is written as skill instructions an agent follows directly, and consults `marin-digital-standards`/`marin-ui` by reference instead of embedding a copy of both. Completes Phase 6 of the marin-digital-standards migration plan.
 
 Once `marin-app-template` existed, the build workflow was rewritten to start every build there instead of reconstructing the shell, branding, and menu behavior from the `marin-ui` docs step by step. Completes Phase 5 of `marin-app-template-plan.md`.
+
+## Font and asset baseline
+
+The build workflow assumes the current `marin-app-template` bundle: Open Sans for body/UI text and Jost for heading/display text, both loaded from local first-party files through `marin-ui`. New apps should not add Google Fonts, Adobe Fonts, jsDelivr, unpkg, cdnjs, or similar runtime static-asset CDNs.

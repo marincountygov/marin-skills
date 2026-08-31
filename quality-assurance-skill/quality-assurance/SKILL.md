@@ -25,6 +25,7 @@ Use the subskills as follows:
 - `manual-testing-plan.md`: practical test steps for pages, forms, documents, journeys, links, and transactions.
 - `issue-severity-and-triage.md`: classify findings and determine escalation priority.
 - `publication-readiness.md`: produce a structured publish, publish-with-edits, hold, or escalate recommendation.
+- `marinos-runtime-assets.md`: verify MarinOS app font loading, local static assets, and external CDN drift.
 
 ## Standard QA workflow
 
@@ -32,8 +33,9 @@ Use the subskills as follows:
 2. Determine the applicable review scope and subskills.
 3. Check content purpose, audience fit, task completion, structure, metadata, links, labels, calls to action, and channel suitability.
 4. Check whether separate specialist review is needed for accessibility, legal/policy, privacy, procurement, emergency notices, multilingual content, public records, or brand identity.
-5. Classify findings by severity.
-6. Provide a publication-readiness decision with required fixes, recommended improvements, owner/escalation notes, and retest steps.
+5. For MarinOS apps, also verify local font/static-asset handling: Open Sans body/UI text, local Jost heading/display text, and no unapproved runtime static-asset CDN references.
+6. Classify findings by severity.
+7. Provide a publication-readiness decision with required fixes, recommended improvements, owner/escalation notes, and retest steps.
 
 ## Review output format
 

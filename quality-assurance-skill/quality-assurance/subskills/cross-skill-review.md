@@ -13,7 +13,7 @@ Coordinate a broad QA review across related content standards without duplicatin
 ## Review domains
 
 ### Brand and visual standards
-Check whether the asset appears consistent with approved County visual identity, logo use, color use, layout conventions, and tone appropriate to the channel.
+Check whether the asset appears consistent with approved County visual identity, logo use, color use, layout conventions, and tone appropriate to the channel. For MarinOS apps, also check that Open Sans body/UI typography, Jost headings, and local static asset loading are inherited from `marin-ui`.
 
 ### Accessibility
 Route to the separate accessibility skill or reviewer when the asset includes web content, PDFs, forms, images, charts, tables, video, audio, documents, or interactive components. Do not duplicate detailed accessibility testing here.

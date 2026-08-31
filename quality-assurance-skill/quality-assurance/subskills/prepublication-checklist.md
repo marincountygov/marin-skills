@@ -43,6 +43,7 @@ Run a final publication checklist before a page, document, form, message, campai
 - Downloadable documents are necessary and named clearly.
 - Links work and point to canonical destinations.
 - Images, charts, tables, and embeds have appropriate alternatives or explanatory text.
+- For MarinOS apps, local Open Sans and Jost font assets are present, and runtime code does not load fonts or static UI assets from external CDNs.
 
 ## Output
 

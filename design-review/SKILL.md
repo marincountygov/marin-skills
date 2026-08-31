@@ -19,6 +19,7 @@ This skill intentionally excludes accessibility requirements, WCAG conformance, 
 - Preserve official County identity — never redraw, distort, recolor, crop, decorate, or improvise the County logo.
 - Use official logo artwork when supplied. If none is supplied, describe placement and usage with a placeholder (`[Official County of Marin logo here]`) rather than fabricating one.
 - Apply County color and typography guidance as design constraints, not suggestions.
+- For MarinOS app typography, review against the current `marin-ui`/`marin-app-template` bundle: Open Sans for body/UI text and Jost for heading/display text from local first-party files.
 - Match the medium — print, presentation, email, social, video, web, report, flyer, chart, diagram, signage — see `marin-digital-standards/brand/mediums.md`.
 - Flag cases needing Public Information Office, department, legal, privacy, or brand-owner review rather than deciding them yourself.
 - Never claim a generated asset is officially approved, and never invent brand colors, logo variants, seals, department marks, slogans, or lockups.

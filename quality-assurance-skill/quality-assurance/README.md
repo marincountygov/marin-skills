@@ -11,6 +11,7 @@ This package provides a publication-readiness QA framework for public content an
 - `subskills/manual-testing-plan.md` - Manual testing structure and test cases.
 - `subskills/issue-severity-and-triage.md` - Severity model and prioritization.
 - `subskills/publication-readiness.md` - Final publish/hold/escalate recommendation.
+- `subskills/marinos-runtime-assets.md` - MarinOS local font and runtime static-asset checks.
 
 ## Intended use
 

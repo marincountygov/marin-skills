@@ -30,6 +30,7 @@ Check whether a content, design, template, navigation, system, or workflow chang
 ### Channel and template behavior
 - Layout changes do not bury critical actions.
 - Reusable components still render the correct content in the correct context.
+- Font and static asset behavior has not regressed: MarinOS apps still use local Open Sans/Jost assets and do not load fonts or static UI assets from external CDNs.
 - Mobile and desktop experiences preserve priority information.
 
 ### Governance

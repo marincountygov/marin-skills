@@ -39,6 +39,7 @@ For each test case include:
 - Confirm confirmation, receipt, next steps, or status information.
 - Test failure paths such as missing information, ineligible status, closed deadlines, unavailable services, and invalid links.
 - Review mobile scanning and print/download behavior where relevant.
+- When testing a MarinOS app, verify local font files and run the MarinOS font policy check if available.
 
 ## Output
 

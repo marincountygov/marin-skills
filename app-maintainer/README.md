@@ -11,3 +11,7 @@ This is the maintenance counterpart to [`marin-app-builder`](https://github.com/
 ## History
 
 Added alongside `marin.yml` project manifests and per-repo `AGENTS.md` files, after a session of manually syncing seven consumer apps to a new `marin-ui` release by hand (checking `BRAND_VERSION`, running `sync-consumer.sh`, then hunting for markup that needed a matching update). This skill formalizes that repeatable sequence instead of re-deriving it each time.
+
+## Font and asset checks
+
+Maintenance reviews include the MarinOS local-first asset rule: the current `marin-ui` bundle should provide Open Sans and Jost from local files, and existing apps should not keep or add Google Fonts, Adobe Fonts, jsDelivr, unpkg, cdnjs, or similar runtime static-asset CDNs.

@@ -1,6 +1,6 @@
 # Color and typography
 
-Review workflow for County of Marin colors, fonts, type hierarchy, and chart/diagram styling. Requirements are canonical in `marin-digital-standards/brand/color.md` and `typography.md`.
+Review workflow for County of Marin colors, fonts, type hierarchy, and chart/diagram styling. Requirements are canonical in `marin-digital-standards/brand/color.md` and `typography.md`; MarinOS app implementation details come from `marin-ui` and `marin-app-template`.
 
 ## Review questions
 
@@ -8,6 +8,7 @@ Review workflow for County of Marin colors, fonts, type hierarchy, and chart/dia
 - Do background/text pairings follow the permitted combinations (see `color.md`'s table)?
 - Are Light Gray and Gold avoided as font colors?
 - Are fonts consistent with County guidance or the supplied template?
+- For MarinOS apps, does body/UI text use local Open Sans and heading/display text use the shared local Jost font from `marin-ui`/`marin-app-template`, rather than external web-font calls or an ad hoc font stack?
 - Is the hierarchy clear at a glance — one primary title, subordinate body text, consistent labels/captions?
 - Are charts and diagrams visually restrained and readable — fewest colors needed, direct labels, no chartjunk?
 - Are decorative effects (heavy bold, all-caps, underlining, drop shadows) avoided?

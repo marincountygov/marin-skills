@@ -15,6 +15,7 @@ Keep an already-built MarinOS app aligned with the platform it was built on, ins
 - The app's own `marin.yml` — its recorded `platform.marin-ui` and `platform.template` versions are the starting point for "how far behind is this app," not a guess or a diff of every file.
 - [`marin-ui/CHANGELOG.md`](https://github.com/marincountygov/marin-ui/blob/main/CHANGELOG.md) — read every entry between the app's recorded version and the current `BRAND_VERSION`, not just the latest one. Each entry states why the change was made and what it affects.
 - [`marin-ui/docs/components.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/components.md) — the current state of any pattern the changelog touched, to check whether the app's own markup needs a matching update beyond the file copy.
+- [`marin-digital-standards/product-design/runtime-dependencies.md`](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/runtime-dependencies.md) — the local-first rule for fonts and static UI assets.
 - The app's own `AGENTS.md` — repo-specific notes an agent should know before editing (standing holds on committing, non-standard structure, etc.).
 
 ## Maintenance workflow
@@ -22,10 +23,22 @@ Keep an already-built MarinOS app aligned with the platform it was built on, ins
 1. Compare the app's `marin.yml`/`BRAND_VERSION` against `marin-ui`'s current `BRAND_VERSION`. If they already match, there's nothing to sync — move to step 5 to check for drift that isn't captured by version number alone (e.g. a pattern the app never adopted).
 2. Read the `marin-ui/CHANGELOG.md` entries between those two versions. Note which changes are pure file-copy (CSS/JS fixes, new generic behaviors) versus which require a matching HTML change in the consumer (a renamed class, a new required data attribute, a markup pattern change like the About/Home nav standardization).
 3. Run `marin-ui/scripts/sync-consumer.sh ../<repo>` to update the vendored `shared/app-brand.css`, `shared/app-shell.js`, `vendor/`, and `BRAND_VERSION`. This is always safe — it's a file copy, not a merge.
-4. For each changelog entry that requires a markup change, apply it to the app's HTML directly (don't leave the app on old markup with new shared files — that's a broken hybrid state, not a completed sync). Update the app's `marin.yml` `platform.marin-ui` field to match.
-5. Check for drift the version number doesn't capture: a component built before a now-standard pattern existed (e.g. a hand-written dropdown before `.menu` existed), a nav that doesn't match the current "About/Home/Updates" standard in `marin-ui/docs/components.md`, or content sitting in the default view that current guidance says belongs in About.
-6. There is no automated check command yet — manually verify against the review checklist in `marin-app-builder/SKILL.md` before considering the app current.
+4. For each changelog entry that requires a markup change, apply it to the app's HTML directly (don't leave the app on old markup with new shared files — that's a broken hybrid state, not a completed sync). Update the app's `marin.yml` `platform.marin-ui` field to match. When the current bundle includes a font or asset change, verify the copied files include `vendor/fonts/open-sans/OpenSans-VariableFont_wdth,wght.woff2`, `vendor/fonts/open-sans/OFL.txt`, and the local Jost file.
+5. Check for drift the version number doesn't capture: a component built before a now-standard pattern existed (e.g. a hand-written dropdown before `.menu` existed), a nav that doesn't match the current "About/Home/Updates" standard in `marin-ui/docs/components.md`, missing local font assets, external font/CDN asset calls, or content sitting in the default view that current guidance says belongs in About.
+6. Run `scripts/check-marinos-font-policy.sh` from this repo against the app when available, then manually verify against the review checklist in `marin-app-builder/SKILL.md` before considering the app current.
 7. Report what was synced automatically, what markup was updated to match, and what's left for a human to decide (a genuine design choice, a missing owner, a repo under a commit hold).
+
+## Font and runtime asset validation
+
+For a MarinOS app that uses the shared bundle, treat these as required post-sync checks:
+
+```text
+Open Sans is loaded from vendor/fonts/open-sans/OpenSans-VariableFont_wdth,wght.woff2.
+vendor/fonts/open-sans/OFL.txt is present.
+Jost remains a local heading/display font when provided by the bundle.
+No Google Fonts, Adobe Fonts, jsDelivr, unpkg, cdnjs, or similar runtime static-asset CDN reference was introduced.
+Application CSS inherits the shared font tokens instead of creating an unrelated body font stack.
+```
 
 ## Boundaries
 
