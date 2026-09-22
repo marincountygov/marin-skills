@@ -12,9 +12,11 @@ Websites, web applications, HTML/CSS/JS, design-system components, and browser-b
 
 - **Accordion** — trigger is a real `<button>`, `aria-expanded` reflects state, hidden panel content isn't focusable.
 - **Modal dialog** — focus moves in on open, is trapped while open, returns to the trigger on close, background is inert, dialog and close button both have accessible names.
-- **Tabs** — only use the true tabs pattern (with its full keyboard behavior) when the content genuinely needs tab semantics; otherwise headings, links, or an accordion are the more honest and more accessible choice.
+- **Tabs** — only use the true tabs pattern (with its full keyboard behavior) when the content genuinely needs tab semantics; otherwise headings, links, or an accordion are the more honest and more accessible choice. A control placed visually among real tabs for layout reasons but that doesn't behave like one (a view toggle, a "see all" link) should not carry `role="tab"`/`aria-selected` just because of where it sits — give it ARIA matching its actual behavior (`aria-pressed` for a toggle button) instead.
 - **Menus** — don't apply ARIA menu roles to ordinary site navigation; reserve them for genuine application-style menu behavior.
 - **Alerts/status/toasts** — `role="status"` for polite updates, `role="alert"` for urgent ones, visible text for all users (not just assistive tech), and a toast is never the only place critical information appears.
+- **Charts (canvas/SVG)** — a canvas element has no inherent accessible content; give it `role="img"` and an `aria-label` stating what the data actually shows (e.g. "30 total, peaking at 8 on Sep 20," not just "Chart"), recomputed whenever the chart's data changes — a label set once at creation goes stale the moment the data updates.
+- **Repeated per-item controls** — a checkbox or select that repeats once per row/card in a list needs an accessible name that identifies *which* item it belongs to, not identical generic text ("Select item") on every instance. Especially important when the control appears before the item's own heading/title in reading order, since a screen reader user reaches the control before learning what it's for.
 
 ## Automated testing
 

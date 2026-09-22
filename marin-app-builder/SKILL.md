@@ -73,6 +73,7 @@ WAVE testing is run from an HTTP URL, or local-file access is enabled for the ex
 Local data has export/import if meaningful.
 No APP_NAME, APP_DESCRIPTION, APP_OWNER, or APP_REPO placeholders remain.
 The app nav includes About and Updates, plus a "Home" link only if the default view has no task-specific tab of its own (see `marin-ui/docs/components.md`, "Standard app nav"); the default view is immediately functional with no info/how-to content stacked into it.
+About's main content is written in plain language (roughly a 6th-grade reading level, no unexplained jargon — "the list updates automatically," not "a scheduled build fetches and deduplicates"); architecture, config file names, and other implementation detail a resident doesn't need go in a labeled "Technical" section at the end of About, not mixed into the plain-language explanation above it. Run `marin-skills/plain-language-review` on About's main content if unsure it clears that bar.
 If the app belongs in MarinOS, it's registered in marin-os/catalog.json and marin-os/index.html (not just built and left unlisted).
 A marin.yml manifest and an AGENTS.md are present in the new app's repo.
 ```
