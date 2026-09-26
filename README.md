@@ -10,4 +10,4 @@ This repo answers: **what should AI do with Marin's standards?** It applies stan
 
 When a skill creates, reviews, or maintains a MarinOS app, it must follow the current platform standard: body and user-interface text use Open Sans from the local `marin-ui`/`marin-app-template` bundle, not from Google Fonts, Adobe Fonts, or another runtime CDN. Shared UI assets should be first-party, local files unless an external data/API integration is an intentional part of the product design.
 
-Use `marinos-font-policy/` for focused font/runtime-asset review, `marin-app-builder/` when starting a new app, and `app-maintainer/` when updating an existing app.
+Use `marinos-font-policy/` for focused font/runtime-asset review, `marin-app-builder/` when starting a new app, `app-maintainer/` when updating an existing app, and `security-review/` for security-specific depth (CSP construction, exceptions, untrusted-content handling) that the other two route into rather than duplicate.

@@ -17,6 +17,7 @@ Keep an already-built MarinOS app aligned with the platform it was built on, ins
 - [`marin-ui/docs/components.md`](https://github.com/marincountygov/marin-ui/blob/main/docs/components.md) — the current state of any pattern the changelog touched, to check whether the app's own markup needs a matching update beyond the file copy.
 - [`marin-digital-standards/product-design/runtime-dependencies.md`](https://github.com/marincountygov/marin-digital-standards/blob/main/product-design/runtime-dependencies.md) — the local-first rule for fonts and static UI assets.
 - The app's own `AGENTS.md` — repo-specific notes an agent should know before editing (standing holds on committing, non-standard structure, etc.).
+- [`marin-digital-standards/security`](https://github.com/marincountygov/marin-digital-standards/tree/main/security) — the security standard, for whether the app's recorded profile/exceptions still fit if its purpose or data handling has changed since the last review.
 
 ## Maintenance workflow
 
@@ -25,8 +26,9 @@ Keep an already-built MarinOS app aligned with the platform it was built on, ins
 3. Run `marin-ui/scripts/sync-consumer.sh ../<repo>` to update the vendored `shared/app-brand.css`, `shared/app-shell.js`, `vendor/`, and `BRAND_VERSION`. This is always safe — it's a file copy, not a merge.
 4. For each changelog entry that requires a markup change, apply it to the app's HTML directly (don't leave the app on old markup with new shared files — that's a broken hybrid state, not a completed sync). Update the app's `marin.yml` `platform.marin-ui` field to match. When the current bundle includes a font or asset change, verify the copied files include `vendor/fonts/open-sans/OpenSans-VariableFont_wdth,wght.woff2`, `vendor/fonts/open-sans/OFL.txt`, and the local Jost file.
 5. Check for drift the version number doesn't capture: a component built before a now-standard pattern existed (e.g. a hand-written dropdown before `.menu` existed), a nav that doesn't match the current "About/Home/Updates" standard in `marin-ui/docs/components.md`, missing local font assets, external font/CDN asset calls, or content sitting in the default view that current guidance says belongs in About.
-6. Run `scripts/check-marinos-font-policy.sh` from this repo against the app when available, then manually verify against the review checklist in `marin-app-builder/SKILL.md` before considering the app current.
-7. Report what was synced automatically, what markup was updated to match, and what's left for a human to decide (a genuine design choice, a missing owner, a repo under a commit hold).
+6. Run `scripts/check-marinos-font-policy.sh` from this repo and `node marin-os/scripts/check-security.js .` against the app when available, then manually verify against the review checklist in `marin-app-builder/SKILL.md` before considering the app current.
+7. Check for security-relevant drift the checker can't see from file presence alone: has the app started collecting data, accepting uploads, or calling a new external API since `security.json` was last reviewed? If so, `data`/`externalDataSources`/`publicSecurity` are stale, not just unsynced — update them and bump `review.lastReviewed`, or flag it for the owner rather than silently leaving an inaccurate declaration in place. Route anything beyond that (a genuine new exception, a CSP change) to `security-review`.
+8. Report what was synced automatically, what markup was updated to match, and what's left for a human to decide (a genuine design choice, a missing owner, a repo under a commit hold).
 
 ## Font and runtime asset validation
 
@@ -42,4 +44,4 @@ Application CSS inherits the shared font tokens instead of creating an unrelated
 
 ## Boundaries
 
-This skill doesn't redesign an app or add features — that's a build task for `marin-app-builder` or the app's own maintainer. It doesn't touch `marin-ui` itself; if a needed fix isn't in `marin-ui` yet, that's a signal to fix `marin-ui` first (see `marin-ui/AGENTS.md`) and then run this skill against the consumer, not to patch around the gap inside one app. It doesn't decide whether an app should be deprecated or archived — that's an ownership decision, report the drift and let the owner decide.
+This skill doesn't redesign an app or add features — that's a build task for `marin-app-builder` or the app's own maintainer. It doesn't touch `marin-ui` itself; if a needed fix isn't in `marin-ui` yet, that's a signal to fix `marin-ui` first (see `marin-ui/AGENTS.md`) and then run this skill against the consumer, not to patch around the gap inside one app. It doesn't decide whether an app should be deprecated or archived — that's an ownership decision, report the drift and let the owner decide. It doesn't do a deep security pass (CSP specifics, a genuine new exception) — that's `security-review`; this skill only checks that `security.json` still matches reality and the required files/sections still exist.
