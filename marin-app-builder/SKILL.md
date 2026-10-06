@@ -59,6 +59,8 @@ The app has one distinctive icon (from `vendor/icons/lucide/`, not the template'
 Light and dark colors follow the operating-system preference through `prefers-color-scheme`; no theme toggle or stored override is present.
 The main menu collapses on narrow viewports with correct `aria-expanded` and `aria-controls` state.
 Heading order is logical; all controls have visible labels; all buttons and links have accessible names.
+Visually hidden file inputs have an accessible name and `tabindex="-1"`; tabs have full arrow-key/Home/End support with only tabs inside the `role="tablist"`; accent text on tinted backgrounds uses `--app-accent-on-tint`; contrast is checked in both light and dark mode.
+`<body data-app-id>` (or the shell's `app-id` attribute) matches the app's `marin-os/catalog.json` id, so the Accessibility section can find the app's Lighthouse score.
 The app is fully keyboard operable; focus states are visible and not obscured.
 Color contrast passes WCAG 2.2 AA; status is not conveyed by color alone.
 `--marin-gold`/`var(--marin-gold)` is not used as a foreground, border, or icon color implying meaning — it's background-only (1.91:1 against white, well under the 4.5:1 text / 3:1 non-text minimums; see `marin-digital-standards/brand/color.md`). Use `--app-accent` for an interactive/semantic highlight instead.
