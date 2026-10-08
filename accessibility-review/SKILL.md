@@ -108,6 +108,17 @@ Apply this skill first, then the relevant subskill for the medium:
 - `subskills/social-media.md` — posts, captions, alt text, hashtags, video captions on social platforms.
 - `subskills/video-audio.md` — video, audio, podcasts, livestreams, webinars.
 
+### Combining subskills
+
+Apply more than one subskill when a review crosses concerns. Do not treat the routing list as mutually exclusive.
+
+Examples:
+- A web form uses both `subskills/web.md` and `subskills/forms.md`.
+- A web page with an embedded media player uses both `subskills/web.md` and `subskills/video-audio.md`.
+- A downloadable fillable PDF uses both `subskills/documents.md` and `subskills/forms.md`.
+
+Keep each concern in the subskill that owns its testing method rather than duplicating instructions across files.
+
 Don't duplicate the requirements from `marin-digital-standards/accessibility` in a subskill — reference them. Subskills define medium-specific review checks, testing methods, common findings, and remediation guidance that the standards repo doesn't cover.
 
 ## Out of scope for this skill

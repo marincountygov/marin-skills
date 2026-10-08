@@ -26,6 +26,28 @@ MarinOS apps also have Lighthouse accessibility scores (PageSpeed Insights API),
 
 WAVE is Marin's standard automated-scan tool. Serve the page over HTTP (`python3 -m http.server 8000`) and test the `http://localhost:8000/` URL — a page opened directly via `file://` frequently grays out because the extension hasn't been granted local-file access, which reads as "untestable," not "clean." Automated scans catch roughly a third of real issues; they cannot evaluate keyboard behavior, focus management, reading order, or announcement quality. Treat a clean scan as a floor, not a finding of accessibility.
 
+## Accessibility tree inspection
+
+When a rendered page is available in a browser, inspect the browser-computed accessibility tree — not just the DOM or author-supplied ARIA. The tree shows the roles, names, states, values, relationships, and structure exposed through the browser's accessibility APIs.
+
+Use the browser's accessibility inspection tools to check:
+
+- **Presence** — meaningful content and controls appear in the tree; decorative or intentionally hidden content does not.
+- **Role** — elements expose roles that match their actual function, such as button, link, heading, checkbox, dialog, navigation, or tab.
+- **Accessible name** — controls and meaningful regions have accurate, distinguishable names that correspond to their visible purpose.
+- **Description** — help text, instructions, and other descriptions are associated where needed.
+- **State** — properties such as expanded, checked, selected, pressed, disabled, invalid, and required reflect the current visible state.
+- **Value** — controls that expose a current value report the correct value.
+- **Relationships** — labels, descriptions, groups, controls, headings, and other programmatic relationships resolve as intended.
+- **Hierarchy** — landmarks, headings, lists, tables, dialogs, and composite widgets form a logical structure.
+- **Hidden and ignored content** — anything absent from the tree is absent intentionally, and content that should be hidden from assistive technology is not exposed.
+
+Inspect page-level structure and every distinct interactive component type. For forms and critical workflows, inspect controls and relationships more comprehensively.
+
+For stateful or dynamic components, inspect the tree before and after interaction. Opening a dialog, expanding an accordion, selecting a tab, changing a toggle, triggering validation, or updating content must produce the corresponding change in computed accessibility properties.
+
+Do not use accessibility-tree inspection as a substitute for keyboard or assistive-technology testing. A correct tree can still produce poor behavior in an actual workflow. If a live rendered page is unavailable, mark accessibility-tree behavior as **Needs manual testing** rather than inferring it from source code alone.
+
 ## Manual testing
 
 - **Keyboard**: reach and operate every interactive element using only Tab, Shift+Tab, Enter, Space, Escape, and arrow keys where a pattern calls for them. Confirm focus order matches visual/logical order and nothing traps focus.
@@ -46,6 +68,14 @@ WAVE is Marin's standard automated-scan tool. Serve the page over HTTP (`python3
 - A tablist containing a non-tab (a toggle button), or tabs with no arrow-key navigation.
 - A visually hidden file input with no accessible name (and a second, invisible Tab stop).
 - `aria-label` on a generic `<div>`/`<span>` with no role (a prohibited ARIA use) — give the container a role such as `list` or `group`.
+- A visible meaningful element or interactive control is unexpectedly absent from the accessibility tree.
+- An interactive element exposes the wrong computed role, or only a generic role, despite appearing operable visually.
+- A control has a missing, misleading, duplicated, or non-distinguishing accessible name.
+- The computed accessible name does not meaningfully correspond to the visible label or purpose.
+- A state such as expanded, selected, pressed, checked, disabled, or invalid does not update when the visible interface changes.
+- Visible help text or error text is not exposed through the expected programmatic relationship.
+- Content intended to be hidden remains exposed to assistive technology, or meaningful content is unintentionally excluded from the accessibility tree.
+- A modal or overlay appears visually while background content remains exposed as though it were still part of the active interface.
 
 ## Framework notes
 
