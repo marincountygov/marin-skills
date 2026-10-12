@@ -49,6 +49,13 @@ Avoid standalone numbers with no context.
 - Explain whether filters affect all charts or only one section.
 - Avoid too many controls on the initial view.
 
+## Stats in MarinOS apps
+
+- A stats tab shows KPI tiles first, then charts in single-column cards, as in `marin-mentions`. Use charts, not tables, for counts over time and for rankings, and keep the same blue for a single series.
+- Give each canvas chart `role="img"`, a text summary in `aria-label` (total, peak or top item), and a `visually-hidden` data table with the same numbers. Add a PNG download under each chart, plus Copy and All PNG for the tab.
+- Every number and chart on the tab must come from the same filtered records as the list. Say what a count means where it is not obvious, for example "A record with several agencies counts once for each."
+- See `marin-app-builder` ("Data-browsing apps") for the full tab, filter, and button pattern.
+
 ## Empty and error states
 
 Dashboards and tables should explain:
