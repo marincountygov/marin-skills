@@ -59,7 +59,25 @@ When the app lets people browse, filter, and summarize records, copy the interac
 - **Feedback button:** the shell (1.11.0 and later) hides the floating Feedback button while the footer is on screen; do not add your own floating control without the same behavior.
 - **Content:** no intro text, no explainer under the search box, and no "view" in button or link labels; see "Review checklist" below.
 
-Show every state: loading, error with retry, no results, and an empty calendar month. Use `marin-skills/data-visualization-skill` for chart choices and accessible alternatives.
+Show every state: loading, error with retry, no results, and an empty calendar month. The loading message is always "Loading {app name}…" (see "Wording for messages" below). Use `marin-skills/data-visualization-skill` for chart choices and accessible alternatives.
+
+## Wording for messages
+
+- **Loading:** any "still loading" text, in the page or in a section, reads `Loading {app name}…` (for example `Loading Marin Reach…`), including the text announced to screen readers. Do not name the data being loaded ("Loading engagement records…") and do not write a bare "Loading…". Marin App Shell 1.12.2 and later builds its own sections' messages this way and exposes `window.MarinAppShell.loadingMessage()` for an app's own text.
+- **Interface text:** no intro paragraph or page heading on the main page, no help text under a search box, and no "view" in button or link labels (see the data-browsing section).
+
+## Apps that produce a report or document
+
+`marin-mentions` Reports is the working example (`assets/reports/`).
+
+- **Store the report as data, render it as a document.** Keep a versioned object (`schemaVersion`) as the source of truth and render it with one function for the on-screen report, Copy for Word, copying a part, and any download. Never build report markup in a second place, and never store generated HTML as the report.
+- **Keep a snapshot of each source item** (headline, publication, date, link) so a saved report still opens after the item leaves the live data.
+- **Word-friendly copy:** semantic HTML only (h1 to h3, p, ul, table with `th scope`), tables with `border` and `cellpadding` attributes (Word draws gridlines from attributes, not CSS), absolute links, no classes, scripts, or layout CSS. Put HTML and plain text on the clipboard with the async clipboard API (`ClipboardItem`), with a hidden-selection `execCommand` copy and then a visible text box as fallbacks. Show the result ("Report copied. Paste it into Word.") in a status line next to the button. Tests prove the markup; a person must paste into Word on Windows and Mac and record the result.
+- **Dates:** decide days in the organization's time zone (Pacific for County reports), not UTC, and keep dates as ISO strings. A post at 5 pm Pacific is the next day in UTC.
+- **Imported files are untrusted:** validate the version and structure, trim and length-limit text, escape everything when rendering, and keep only http, https, and mailto links. Give plain-language errors for a bad file.
+- **Drafts:** a draft saved in the browser needs a note that it stays on that device, a way to download the report as a file, and a flush on `pagehide` so a quick reload does not lose the last edit.
+- **Curation, not guessing:** do not infer classifications (for example whether coverage resulted from a news release). Let people place and order items with buttons, never drag-only.
+- **Links from aggregators:** items found through Google News carry a Google link, not the publisher's page. Make the link editable.
 
 ## Apps built from a spreadsheet or CSV
 
@@ -118,6 +136,7 @@ Local data has export/import if meaningful.
 No APP_NAME, APP_DESCRIPTION, APP_OWNER, or APP_REPO placeholders remain.
 The app nav includes About and Updates, plus a "Home" link only if the default view has no task-specific tab of its own (see `marin-ui/docs/components.md`, "Standard app nav"); the default view is immediately functional with no info/how-to content stacked into it.
 About's main content is written in plain language (roughly a 6th-grade reading level, no unexplained jargon — "the list updates automatically," not "a scheduled build fetches and deduplicates"); architecture, config file names, and other implementation detail a resident doesn't need go in a labeled "Technical" section at the end of About, not mixed into the plain-language explanation above it. Run `marin-skills/plain-language-review` on About's main content if unsure it clears that bar.
+Page-level and section loading messages say "Loading {app name}…", not generic or data-specific wording.
 The primary page has no intro paragraph, no visible page heading restating the app, and no help text under the search box; that content is in About.
 For a data-browsing app: tabs, sidebar order, "Showing:" line, Reset under search, button row, per-listing checkboxes with Select all, and Chart.js charts match `marin-mentions`; charts are not tables and each has a text summary plus a screen-reader-only data table; statuses and other values are text, not color alone.
 For a spreadsheet-based app: the CSV is the source, generated JSON is committed and `--check` passes, aliases are in a data file, uncertain values are reported not merged, and one selectors module feeds every tab.
