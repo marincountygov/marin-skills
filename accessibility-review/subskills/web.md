@@ -65,6 +65,13 @@ Do not use accessibility-tree inspection as a substitute for keyboard or assisti
 - Dynamic error or status update not wrapped in a live region, so it's silent to assistive technology.
 - Status or required-field state conveyed by color alone.
 - Accent-colored text on a tint of the same accent (current nav link, hovered menu item, pressed filter) under 4.5:1 — use `--app-accent-on-tint`; check dark mode too, where a white-on-accent selected state can drop to about 1.7:1.
+- Form control borders (text, date, select, checkbox, radio) under 3:1 against what they sit on (WCAG 1.4.11). Pico's default border is about 1.4:1. Use `--app-control-border` (Marin UI 1.23.0, shell 1.10.1 and later), never `--app-border`, which is a decorative divider. When overriding a Pico variable, match Pico's selector (`:root:not([data-theme=dark])`); a plain `:root` rule loses to it, and a measured contrast that does not change is the clue.
+- Canvas charts left on the chart library's default colors: dark grey axis text on a dark card is nearly invisible. Set the library's default text and grid colors from the page's computed colors, rebuild charts when `prefers-color-scheme` changes, and give PNG exports the card background.
+- A visually hidden `<table>` (used as a chart's text alternative) that is itself given the hiding class: tables ignore the clip, so it can add sideways scrolling on narrow screens. Wrap it in a hidden `<div>`.
+- A CSS grid column written as `1fr` that holds wide content (a canvas, a table, a long label): `1fr` will not shrink below its content and forces horizontal scroll at 320 px. Use `minmax(0, 1fr)` and `min-width: 0` on the grid item. Always test reflow on every tab or view, not just the default one.
+- Per-item controls named only by a repeated title ("Select: Envision Marin" ten times). Add the date, time, or other distinguishing detail to the accessible name.
+- A link styled as a button (`<a role="button">`) that does not answer the Space key, or that opens a new tab without saying so. Add a Space handler and put the new-tab note in `aria-label` (keeping the visible text at the start of the name).
+- Two landmarks with the same name (a `<form>` and an `<aside>` both labeled "Filter results").
 - A tablist containing a non-tab (a toggle button), or tabs with no arrow-key navigation.
 - A visually hidden file input with no accessible name (and a second, invisible Tab stop).
 - `aria-label` on a generic `<div>`/`<span>` with no role (a prohibited ARIA use) — give the container a role such as `list` or `group`.
