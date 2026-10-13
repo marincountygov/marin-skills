@@ -76,8 +76,8 @@ When the data starts as a spreadsheet, keep the file as the editable source and 
 - Unit-test the pure modules: Python `unittest` for the converter and Node's built-in `node --test` for the selectors. No test dependencies.
 - Add one Playwright workflow test (Python) that serves the repo under a project-site path such as `/<repo>/`, fixes the clock, and runs light and dark. It should cover filters, tab switching with state kept, the calendar, dialogs, stats, copy and download buttons, empty and error states, keyboard reach, and narrow screens with no horizontal scroll.
 - Under the static CSP, use Playwright locator waits, not string-based `wait_for_function`, which needs `unsafe-eval`.
-- `marin-app-template`'s `tests/browser_smoke.py` asserts starter content and already fails on shell 1.10.0. Do not run it in a real app. `tests/browser_security.py` still imports helpers from it, so keep the file until those move upstream.
-- The shell requests `data/lighthouse.json` from a local MarinOS origin when served from localhost; the app's CSP blocks it. Ignore that one console error in tests.
+- `marin-app-template` 2.0.3 and later has a working `tests/browser_smoke.py` for the starter and a CSP that allows the shell's Accessibility score and Tech data requests. In a real app, replace its assertions with the app's own workflow test (keep the file if `tests/browser_security.py` imports helpers from it). An app made from an older template may have the old failing test and a CSP missing `marin-os/data/lighthouse.json` and `marin-os/data/tech.json`; add those two URLs to `security.json` `csp.directives.connect-src`, run `python3 scripts/sync-security-meta.py --write`, and note them in `data.externalDataSources`.
+- When an app is served from `localhost`, the shell reads that score and Tech data from a local MarinOS server (`http://localhost:8935`), which the app's CSP blocks on purpose. Ignore that one blocked-request console message in tests and check those two sections on the deployed app.
 
 ## Review checklist before accepting generated code
 
