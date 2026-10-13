@@ -50,4 +50,4 @@ Provide:
 
 ## Canvas charts in MarinOS apps
 
-A canvas has no text of its own. Set `role="img"` and an `aria-label` of the form "Title. Summary." (for example "Top: District 3 with 4, of 4 shown."), and recompute it on every render so it never goes stale as filters change. Add a `visually-hidden` table of the plotted values next to the canvas. Do not rely on the chart's colors alone to carry meaning.
+A canvas has no text of its own. Set `role="img"` and an `aria-label` of the form "Title. Summary." (for example "Top: District 3 with 4, of 4 shown."), and recompute it on every render so it never goes stale as filters change. Add a table of the plotted values next to the canvas, inside a `visually-hidden` wrapper `<div>` (the class does not clip a `<table>` element and can add sideways scrolling on narrow screens). Set the chart library's default text and grid colors from the page's computed colors, since its default dark grey text disappears in dark mode, and rebuild charts when the color scheme changes. Do not rely on the chart's colors alone to carry meaning.
