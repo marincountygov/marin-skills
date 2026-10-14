@@ -65,6 +65,8 @@ Show every state: loading, error with retry, no results, and an empty calendar m
 
 - **Loading:** any "still loading" text, in the page or in a section, reads `Loading {app name}…` (for example `Loading Marin Reach…`), including the text announced to screen readers. Do not name the data being loaded ("Loading engagement records…") and do not write a bare "Loading…". Marin App Shell 1.12.2 and later builds its own sections' messages this way and exposes `window.MarinAppShell.loadingMessage()` for an app's own text.
 - **Interface text:** no intro paragraph or page heading on the main page, no help text under a search box, and no "view" in button or link labels (see the data-browsing section).
+- **Never "view":** no app uses "view" in a button or link label, whether or not it browses data. A card with one destination makes its title the link, with no separate button. Card grids use the shell's `.app-card` look (as the MarinOS home page does), not a custom card style. Put badges after the description.
+- **Breadcrumbs, not back buttons:** show the way back as a trail such as `Catalog / Course name`, with links for every step but the last. Do not write "Back to catalog" buttons.
 
 ## Apps that produce a report or document
 
