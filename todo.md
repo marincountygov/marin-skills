@@ -168,3 +168,8 @@ The 11 recommendations above are top-level additions. Separately, expand the exi
 - [X] 5. `quality-assurance/`
 - [X] 6. Missing accessibility child skills: `pdf`, `office-documents`, `social-media`, `video-audio`, `forms`, `email`
 - [X] 7. Remaining categories: `digital-service-design`, `inclusive-language`, `channel-standards`, `forms-and-documents`, `data-visualization`, `seo-and-search`
+
+## Marin Learn content
+
+- [X] Add `marin-learn-content/` (Notes, the decks built from them, and quizzes). The standard is `marin-digital-standards/content-design/learning-content.md`.
+- [ ] Add a Marin Learn editor workflow to the skill when the Note editor ships.

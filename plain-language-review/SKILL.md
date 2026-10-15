@@ -60,5 +60,6 @@ When rewriting government, legal, policy, or benefits content:
 
 ## Related
 
+- `marin-learn-content`: for Marin Learn Notes, decks, and quizzes. Learn content targets grade 6, and the Marin Learn validator warns when a section reads above it.
 - `marin-digital-standards/content-design/plain-language.md`, `voice-and-tone.md`, `terminology.md` — the standard this skill applies.
 - `inclusive-language-review` — for content touching identity, disability, trauma, or other sensitive categories; run both when relevant, keep findings in separate sections.
