@@ -74,6 +74,8 @@ Show every state: loading, error with retry, no results, and an empty calendar m
 - **Section boxes:** when each section is its own block of content, give it a box: the card look (border, radius, surface background) without the shadow.
 - **Secondary cards:** a group of smaller, supporting cards, such as a Help section under a main list of cards, uses a quieter card: smaller icon, title, and description. Keep the primary card's structure (icon, title as the link, one short description) and the same description rules.
 
+- **Marin Learn content:** a course's Note, deck, and quiz follow the `marin-learn-content` skill. The deck and quiz are built with `scripts/build_note_deck.mjs` and `scripts/build_note_quiz.mjs`, never written by hand.
+
 ## Apps that produce a report or document
 
 `marin-mentions` Reports is the working example (`assets/reports/`).
