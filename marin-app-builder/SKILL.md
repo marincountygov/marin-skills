@@ -68,6 +68,12 @@ Show every state: loading, error with retry, no results, and an empty calendar m
 - **Never "view":** no app uses "view" in a button or link label, whether or not it browses data. A card with one destination makes its title the link, with no separate button. Card grids use the shell's `.app-card` look (as the MarinOS home page does), not a custom card style. Put badges after the description.
 - **Breadcrumbs, not back buttons:** show the way back as a trail such as `Catalog / Course name`, with links for every step but the last. Do not write "Back to catalog" buttons.
 
+## Long pages with sections
+
+- **On this page:** a page with several sections gets a table of contents named "On this page": a `nav.docs-toc` with `aria-label="On this page"` and links to the sections' `id`s, in the right-hand column on wide screens and above the content on narrow ones. The shell marks the section being read with `aria-current="location"` (bold, accent blue) as the reader scrolls, with no app JavaScript. If the app builds the page with JavaScript, call `window.marinOnThisPage(nav)` after the sections and the list are in the page. Only list sections that exist, and use the same words as the headings. See `marin-ui/docs/components.md`, "On this page".
+- **Section boxes:** when each section is its own block of content, give it a box: the card look (border, radius, surface background) without the shadow.
+- **Secondary cards:** a group of smaller, supporting cards, such as a Help section under a main list of cards, uses a quieter card: smaller icon, title, and description. Keep the primary card's structure (icon, title as the link, one short description) and the same description rules.
+
 ## Apps that produce a report or document
 
 `marin-mentions` Reports is the working example (`assets/reports/`).
