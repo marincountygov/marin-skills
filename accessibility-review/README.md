@@ -13,6 +13,7 @@ Requirements live in [marin-digital-standards/accessibility](https://github.com/
 - `subskills/forms.md` — any form, regardless of medium.
 - `subskills/social-media.md` — posts, captions, alt text, hashtags, graphics.
 - `subskills/video-audio.md` — video, audio, podcasts, livestreams.
+- `subskills/maps.md` — interactive maps of point locations.
 
 ## History
 

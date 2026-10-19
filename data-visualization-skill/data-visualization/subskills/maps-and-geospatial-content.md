@@ -49,6 +49,10 @@ For facilities, drop boxes, clinics, public meetings, or services, include:
 - Phone or link for confirmation.
 - Transit, parking, or access notes when relevant.
 
+## Interactive point maps in apps
+
+For a map of events, facilities, or other point locations inside a MarinOS app (markers, selection, a text list, counts of mapped and unmapped records), use `marin-skills/map-views` and `marin-digital-standards/product-design/maps.md`. Never imply the list is shorter than it is: say how many records are not on the map and why.
+
 ## Output pattern
 
 Provide:

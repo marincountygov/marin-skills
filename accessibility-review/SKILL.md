@@ -107,6 +107,7 @@ Apply this skill first, then the relevant subskill for the medium:
 - `subskills/forms.md` — any form, regardless of medium (web, PDF, document-based).
 - `subskills/social-media.md` — posts, captions, alt text, hashtags, video captions on social platforms.
 - `subskills/video-audio.md` — video, audio, podcasts, livestreams, webinars.
+- `subskills/maps.md` — interactive maps of point locations (markers, keyboard and screen reader behavior, text alternative, touch, scrolling).
 
 ### Combining subskills
 
@@ -116,6 +117,7 @@ Examples:
 - A web form uses both `subskills/web.md` and `subskills/forms.md`.
 - A web page with an embedded media player uses both `subskills/web.md` and `subskills/video-audio.md`.
 - A downloadable fillable PDF uses both `subskills/documents.md` and `subskills/forms.md`.
+- A web page with an interactive map uses both `subskills/web.md` and `subskills/maps.md`.
 
 Keep each concern in the subskill that owns its testing method rather than duplicating instructions across files.
 
