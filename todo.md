@@ -179,3 +179,6 @@ The 11 recommendations above are top-level additions. Separately, expand the exi
 - [X] Add `map-views/` (point-location maps in MarinOS apps). The standards are `marin-digital-standards/product-design/maps.md` and `accessibility/maps.md`.
 - [X] Add `accessibility-review/subskills/maps.md`, and pointers in `marin-app-builder`, `security-review`, `app-maintainer`, and `data-visualization`.
 - [ ] If a second app needs a map, move the Leaflet CSS reset and marker pattern into `marin-ui` and update `map-views` to point there.
+
+- [X] Port the collapsible filters pattern from `marin-reach` to `marin-mentions` (Latest and Sources panels, plus `tests/browser_filters.py`).
+- [ ] Move the shared filter toggle CSS and code (`.search-side`, the icon button, `data-filter-toggle`) into `marin-ui` so apps stop copying it by eye, then point `marin-app-builder` at it.
