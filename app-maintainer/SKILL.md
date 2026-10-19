@@ -32,6 +32,16 @@ Keep an already-built MarinOS app aligned with the platform it was built on, ins
 9. Check for security-relevant drift the checker can't see from file presence alone: has the app started collecting data, accepting uploads, or calling a new external API since `security.json` was last reviewed? If so, `data`/`externalDataSources`/`publicSecurity` are stale, not just unsynced — update them and bump `review.lastReviewed`, or flag it for the owner rather than silently leaving an inaccurate declaration in place. Route anything beyond that (a genuine new exception, a CSP change) to `security-review`.
 10. Report what was synced automatically, what markup was updated to match, and what's left for a human to decide (a genuine design choice, a missing owner, a repo under a commit hold).
 
+## Apps that fetch news or feeds
+
+For an app that collects items from outside sources on a schedule (`marin-mentions` is the example; its README has the evidence), check these before concluding a story was missed:
+
+- Is the item already in the published `data.json`, and under which monitor or filter? A story can be present but matched only by a broad monitor.
+- Google News search returns at most 100 items per query, ranked by relevance, not strictly newest first, so a broad query can push a story out. Prefer narrower queries and rely on the merge with the 60-day history.
+- Repeats of one story (the same headline on the same day from an outlet and a syndicator such as Yahoo) are merged into one item by design.
+- Scheduled GitHub builds run every few hours in practice, with gaps of up to about six hours, so a story from the morning can be a build or two away. Look at when the last run finished before debugging.
+- A feed that returns 403 to a direct request from a laptop can still work from the build. Judge a source by its status on the app's Sources page, not by a local `curl`.
+
 ## Font and runtime asset validation
 
 For a MarinOS app that uses the shared bundle, treat these as required post-sync checks:

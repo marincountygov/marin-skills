@@ -6,7 +6,7 @@ A map is an alternate visualization. The first question is always: can a person 
 
 ## Review workflow
 
-1. Confirm every mapped record is also in the list and that the map has its own text list of locations that selects the same details.
+1. Confirm every mapped record is also in the list and that the map has its own text alternative (a list or a dropdown of locations, alphabetical, defaulting to all locations) that selects the same details, and that changing it is announced without moving focus away.
 2. Keyboard only: reach the map, Tab to each marker, choose it with Enter and with Space, read the details, use a link or button inside them, leave the map. Confirm focus is visible on the basemap in light and dark mode, and that Tab never gets stuck.
 3. Check focus after choosing a marker (it moves to the details) and after Escape or Clear (it returns to the marker).
 4. Accessibility tree: each marker exposes the role `button` and a meaningful name ("Event, at Place" or "Place, 3 engagements"), never "Marker" or "Map pin". Zoom controls have names. The selected location and any counts are exposed as text.

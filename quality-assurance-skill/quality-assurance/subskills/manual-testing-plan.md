@@ -41,6 +41,15 @@ For each test case include:
 - Review mobile scanning and print/download behavior where relevant.
 - When testing a MarinOS app, verify local font files and run the MarinOS font policy check if available.
 
+### Testing a web app in a browser
+
+- Playwright may not be installed. Use a virtual environment outside the repo (`python3 -m venv`, `pip install playwright`, `playwright install chromium`) so the repo gets no new files.
+- Add an axe-core scan of the key views, in light and dark, as a check that finds the obvious. It is not a conformance result; say what it cannot see (keyboard behavior, reading order, screen reader announcements, touch).
+- Wait for results instead of sleeping where possible: search is often debounced and the shell fades elements with CSS transitions.
+- A test that fixes the clock also freezes animations that depend on it, such as a map's pan, zoom and cluster movement; emulate reduced motion for those steps.
+- Check the browser console for policy violations (blocked scripts, styles or images) in every view, not only on the first page.
+- Keep the steps a person must do (a screen reader, a real phone, 400% zoom) in the report as not tested.
+
 ## Output
 
 Return a table of test cases and a summary section with unresolved risks and launch recommendation.
