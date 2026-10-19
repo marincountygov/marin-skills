@@ -12,10 +12,12 @@ A map is an alternate visualization. The first question is always: can a person 
 4. Accessibility tree: each marker exposes the role `button` and a meaningful name ("Event, at Place" or "Place, 3 engagements"), never "Marker" or "Map pin". Zoom controls have names. The selected location and any counts are exposed as text.
 5. Screen reader: VoiceOver with Safari at minimum. Activate a marker with the screen reader's own command and confirm focus reaches the details. Confirm counts are announced once as a status message, not on every pan or zoom.
 6. Touch: choose a marker, pan and zoom with two fingers, and confirm one-finger scrolling still moves the page past the map. Confirm targets are at least 24 CSS pixels.
-7. Scroll trapping: with the pointer over the map, the wheel scrolls the page until the map is clicked or focused.
-8. Motion: with reduced motion set, pan and zoom do not animate.
-9. Reflow: 320 CSS pixels wide, then 200% and 400% zoom. No horizontal page scroll and the map does not push the controls off screen.
-10. Contrast and color: markers are identical in look; nothing depends on color, hover, or a popup; attribution is readable.
+7. Clusters: each cluster is a button named by what it holds, Enter and Space zoom in, focus lands on the map and is not lost when the cluster splits, a place chosen from the list or a link is revealed and selected, and nothing appears only on hover.
+8. Full window: it opens as a modal dialog with a name, the background is inert, Tab stays inside, Escape closes it, focus returns to the button that opened it, the button's name changes ("Full window", "Exit full window"), and the details, list and controls are all still there. Check it at 320 px and 400% zoom.
+9. Scroll trapping: with the pointer over the map, the wheel scrolls the page until the map is clicked or focused.
+10. Motion: with reduced motion set, pan and zoom do not animate.
+11. Reflow: 320 CSS pixels wide, then 200% and 400% zoom. No horizontal page scroll and the map does not push the controls off screen.
+12. Contrast and color: markers are identical in look and every cluster looks the same; nothing depends on color, hover, or a popup; attribution is readable.
 
 ## Common findings
 
