@@ -173,3 +173,9 @@ The 11 recommendations above are top-level additions. Separately, expand the exi
 
 - [X] Add `marin-learn-content/` (Notes, the decks built from them, and quizzes). The standard is `marin-digital-standards/content-design/learning-content.md`.
 - [ ] Add a Marin Learn editor workflow to the skill when the Note editor ships.
+
+## Map views
+
+- [X] Add `map-views/` (point-location maps in MarinOS apps). The standards are `marin-digital-standards/product-design/maps.md` and `accessibility/maps.md`.
+- [X] Add `accessibility-review/subskills/maps.md`, and pointers in `marin-app-builder`, `security-review`, `app-maintainer`, and `data-visualization`.
+- [ ] If a second app needs a map, move the Leaflet CSS reset and marker pattern into `marin-ui` and update `map-views` to point there.
