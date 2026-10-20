@@ -181,4 +181,4 @@ The 11 recommendations above are top-level additions. Separately, expand the exi
 - [ ] If a second app needs a map, move the Leaflet CSS reset and marker pattern into `marin-ui` and update `map-views` to point there.
 
 - [X] Port the collapsible filters pattern from `marin-reach` to `marin-mentions` (Latest and Sources panels, plus `tests/browser_filters.py`).
-- [ ] Move the shared filter toggle CSS and code (`.search-side`, the icon button, `data-filter-toggle`) into `marin-ui` so apps stop copying it by eye, then point `marin-app-builder` at it.
+- [X] Move the shared filter toggle CSS and code into `marin-ui` (1.28.0, icons in 1.28.1) and `marin-app-shell` 1.14.0; `marin-reach` and `marin-mentions` use the shared button.
