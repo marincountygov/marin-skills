@@ -15,8 +15,10 @@ Help create and review the content of a Marin Learn course: a **Note**, the **de
 ## Hard rules
 
 - **Never invent** an example, citation, quote, link, or statistic. Use only sources you have read. If a page cannot be read (blocked, retired, or empty), leave it out, say so, and ask the owner. Examples are supplied by the owner. With none, the section is hidden.
+- **No general assumptions.** Say only what a source you read says. Do not claim how common something is ("many," "often," "most," "usually") or what people do or what happens to them, unless a source says so. Describe the situation the sources describe, not one you assume. If a point is your own reasoning, say so to the owner when you show the draft.
 - **Grade 6 reading level**, active voice, short sentences. Titles and headings in sentence case.
 - **Quiz questions talk about the topic**, such as "data" or "a schema", never "the notes" or a section. Quizzes have **at most 10 questions** and **no select-all questions**.
+- **No acronym in a description** (short descriptions, course descriptions, deck and quiz abstracts) unless the heading already spells it out. A course titled "API 101" does not, so its descriptions say "application programming interface." This includes the deck's `--abstract`.
 - **No "view"** in button or link text. No emoji in content.
 - Content that needs the owner's approval is a **draft** until they approve it. Say which parts you wrote.
 
