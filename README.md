@@ -12,4 +12,4 @@ When a skill creates, reviews, or maintains a MarinOS app, it must follow the cu
 
 Use `map-views/` to add or review a map of point locations in an app (location data, Leaflet, keyboard and screen reader behavior, the basemap and CSP change).
 
-Use `marin-learn-content/` to write, build, or review Marin Learn Notes, decks, and quizzes. Use `marinos-font-policy/` for focused font/runtime-asset review, `marin-app-builder/` when starting a new app, `app-maintainer/` when updating an existing app, and `security-review/` for security-specific depth (CSP construction, exceptions, untrusted-content handling) that the other two route into rather than duplicate.
+Use `marin-learn-content/` to write, build, or review Marin Learn Notes, decks, and quizzes. Use `marinos-font-policy/` for focused font/runtime-asset review, `marin-spec/` to write or review a project specification, `marin-app-builder/` when starting a new app, `app-maintainer/` when updating an existing app, and `security-review/` for security-specific depth (CSP construction, exceptions, untrusted-content handling) that the other two route into rather than duplicate.
