@@ -110,7 +110,7 @@ When the app holds documents that belong together (the pages of a guide, the reg
 - **A glossary for each set that defines terms:** one glossary page for the set (not one shared across sets, because the same word means different things in different sets), built from the set's own `DefinedTerm` data: terms A to Z, each definition in the data's words with a link to the section that defines it, a "Reference" group in the left navigation, a card on the list page, and the terms in the set's search. It has no previous and next links and no Citation. Do not link a term inside the text unless the data says where each use is. See `marin-ui/docs/components.md`, "Document set glossary", and `marin-docs/scripts/build-pmrs.js`.
 - **Listed documents only:** a document left off the lists is left off the navigation, the pager, the cards and every search file. Read the structured list, not the folder.
 - **Below the home page** every page has the same shell as the home page (header with About and Updates, footer, Feedback) and no breadcrumb.
-- **Copy, share and download** above the title of a document, as the shell provides them (`data-formats-for` on the article); a document with structured data also offers it as JSON.
+- **Copy, share and download** above the title of a document, as the shell provides them (`data-formats-for` on the article); a document with structured data also offers it as JSON, and a document people quote has Citation in its Copy menu and, at the end of each numbered section, its own Copy citation and Copy text buttons (see `marin-ui/docs/components.md`, "Citing a document"). Do not hide a copy function only in a menu at the top.
 
 ## Apps that produce a report or document
 
