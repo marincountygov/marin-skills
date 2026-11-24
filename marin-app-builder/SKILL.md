@@ -89,7 +89,7 @@ Show every state: loading, error with retry, no results, and an empty calendar m
 - **No ancillary text:** never add counts or tallies of what is hidden ("25 more.", "14 programs.") under a heading or list; a link to the full list is enough. A short list of cards shows whole rows only (`docs-grid--3`, 3 or 6 cards), never an orphan card on the last row.
 - **Interface text:** no intro paragraph or page heading on the main page, no help text under a search box, and no "view" in button or link labels (see the data-browsing section).
 - **Never "view":** no app uses "view" in a button or link label, whether or not it browses data. A card with one destination makes its title the link, with no separate button. Card grids use the shell's `.app-card` look (as the MarinOS home page does), not a custom card style. Put badges after the description.
-- **Breadcrumbs, not back buttons:** show the way back as a trail such as `Catalog / Course name`, with links for every step but the last. Do not write "Back to catalog" buttons.
+- **No breadcrumb where something else already shows the place.** Tabs (Marin Budget) and the left navigation of a document set (Marin Docs) already do, so those pages have none. Add a breadcrumb only when a page sits two levels deep with no tabs or navigation to show where you are, such as Marin Learn's course viewer (`Catalog / Course name`, links for every step but the last), or when asked. Even then, the way back is the trail, never a "Back to catalog" button.
 
 ## Long pages with sections
 
@@ -98,6 +98,18 @@ Show every state: loading, error with retry, no results, and an empty calendar m
 - **Secondary cards:** a group of smaller, supporting cards, such as a Help section under a main list of cards, uses a quieter card: smaller icon, title, and description. Keep the primary card's structure (icon, title as the link, one short description) and the same description rules.
 
 - **Marin Learn content:** a course's Note, deck, and quiz follow the `marin-learn-content` skill. The deck and quiz are built with `scripts/build_note_deck.mjs` and `scripts/build_note_quiz.mjs`, never written by hand.
+
+## Sets of documents (guides, regulations, procedures)
+
+When the app holds documents that belong together (the pages of a guide, the regulations of a manual, a collection of procedures), copy `marin-docs` instead of designing the navigation. The standards are in `marin-ui/docs/components.md`: "Document set outline", "Document set landing page" and "Search results that show where the words are". Read them and the reference code (`marin-docs/scripts/doc-nav.js`, `doc-pager.js`, `build-pmrs.js`, `home-search.js`, `doc-search.js`, `doc-highlight.js`) before writing anything.
+
+- **Left navigation:** one navigation for every kind of document, with three levels (the set, its groups, its documents), the current document marked with `aria-current="page"`, and a search box under the set's title. Build it from the data the set already has (a guide's `groups`, a manual's order, a procedure's department) with one function, as plain HTML. Never write it by hand into a page, and never put the sections of the current document in it: they stay in "On this page" on the right. A long set opens only the group that holds the current document.
+- **Previous and next** at the foot of each document, in the set's own order, from the same data.
+- **List page:** one card for each group, listing its documents as links, with a search box above that looks through the whole set. Only what the data holds: no written summaries or explanation. The cards are the navigation there, so the left navigation is not drawn.
+- **Search that reads text:** a search of the text of documents shows, under each result, a line of the text with the matched words marked, and marks the same words on the page that opens (the words travel in `sessionStorage`, never in the address). The text is in one file for each set, read only after a person starts to search; the small list that finds names does not carry it. A box in a sidebar lists names only.
+- **Listed documents only:** a document left off the lists is left off the navigation, the pager, the cards and every search file. Read the structured list, not the folder.
+- **Below the home page** every page has the same shell as the home page (header with About and Updates, footer, Feedback) and no breadcrumb.
+- **Copy, share and download** above the title of a document, as the shell provides them (`data-formats-for` on the article); a document with structured data also offers it as JSON.
 
 ## Apps that produce a report or document
 
@@ -160,6 +172,8 @@ Color contrast passes WCAG 2.2 AA; status is not conveyed by color alone.
 `--marin-gold`/`var(--marin-gold)` is not used as a foreground, border, or icon color implying meaning — it's background-only (1.91:1 against white, well under the 4.5:1 text / 3:1 non-text minimums; see `marin-digital-standards/brand/color.md`). Use `--app-accent` for an interactive/semantic highlight instead.
 No page-level header or nav is `position: sticky`/`fixed` while the page scrolls (a sidebar "on this page" list is the one accepted sticky exception — see `marin-digital-standards/product-design/responsive-design.md`).
 Dynamic messages use role="status" or role="alert" appropriately.
+An app with documents in a set has the one left navigation, a previous and next link, and a list page of cards for its groups, all built from the data (`marin-ui/docs/components.md`, "Document set outline" and "Document set landing page"); none is written by hand into a page, and a document left off the lists is in none of them.
+A search that reads the text of documents shows a line of text with the matched words marked under each result and marks them on the page it opens, with the text in a file read only after a person starts to search (`marin-ui/docs/components.md`, "Search results that show where the words are").
 Copy, download, file reading and upload use the shell helpers (marinCopyRich, marinCopyText, marinDownload, marinReadText, marinUpload); `vendor/marinos/audit-shared-helpers.py` lists nothing; a copied heading has no inline style or <strong>; a CSV download starts with a byte-order mark; a Windows-1252 file with a curly apostrophe loads as an apostrophe, not "�".
 Forms expose clear validation errors; tables use proper headers and scope.
 Touch/click targets are adequately sized; reduced motion is respected.
