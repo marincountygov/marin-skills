@@ -172,7 +172,6 @@ The 11 recommendations above are top-level additions. Separately, expand the exi
 ## Marin Learn content
 
 - [X] Add `marin-learn-content/` (Notes, the decks built from them, and quizzes). The standard is `marin-digital-standards/content-design/learning-content.md`.
-- [ ] Add a Marin Learn editor workflow to the skill when the Note editor ships.
 
 ## Map views
 
